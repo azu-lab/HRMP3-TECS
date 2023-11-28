@@ -1,0 +1,19 @@
+{
+  "SystemCycleTime": 10000,
+  "SOM": [
+    {
+      "name": "SOM1",
+      "Next": "SOM1",
+      "CLS_PRC2": {
+        "rProcessor2Only": 1000
+      },
+      "CLS_PRC3": {
+        "rProcessor3Only": 1000,
+        "rUserDomain2": 1000
+      },
+      "CLS_ALL_PRC1": {
+        "rProcessor1Mig": 1000
+      }
+    }
+  ]
+}
