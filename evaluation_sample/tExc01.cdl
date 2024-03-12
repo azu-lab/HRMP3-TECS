@@ -1,0 +1,166 @@
+/*
+* tExc01.cdl
+*/
+
+import(<kernel.cdl>);
+
+/*
+ *  ターゲット非依存のセルタイプの定義
+ */
+import("syssvc/tSerialPort.cdl");
+import("syssvc/tSerialAdapter.cdl");
+import("syssvc/tSysLog.cdl");
+import("syssvc/tSysLogAdapter.cdl");
+import("syssvc/tLogTask.cdl");
+import("syssvc/tBanner.cdl");
+/*
+ *  ターゲット依存部の取り込み
+ */
+import("target.cdl");
+
+import_C("tExc01.h");
+
+region rProcessor1Migratable {
+	cell tSysLogAdapter SysLogAdapter {
+		cSysLog = rProcessor1Migratable::SysLog.eSysLog;
+	};
+
+	cell tSerialAdapter SerialAdapter {
+		cSerialPort[0] = rProcessor1Migratable::SerialPort1.eSerialPort;
+	};
+};
+
+region rProcessor1Migratable {
+	cell tSysLog SysLog{
+		logBufferSize = 32;					/* ログバッファのサイズ */
+		initLogMask = C_EXP("LOG_UPTO(LOG_NOTICE)");
+										/* ログバッファに記録すべき重要度 */
+		initLowMask = C_EXP("LOG_UPTO(LOG_EMERG)");
+									   	/* 低レベル出力すべき重要度 */
+
+		/* 低レベル出力との結合 */
+		cPutLog = PutLogTarget.ePutLog;
+	};
+
+	cell tSerialPort SerialPort1 {
+		receiveBufferSize = 256;			/* 受信バッファのサイズ */
+		sendBufferSize    = 256;			/* 送信バッファのサイズ */
+
+		/* ターゲット依存部との結合 */
+		cSIOPort = SIOPortTarget1.eSIOPort;
+		eiSIOCBR <= SIOPortTarget1.ciSIOCBR;	/* コールバック */
+	};
+
+	cell tLogTask LogTask {
+		priority  = 3;					/* システムログタスクの優先度 */
+		stackSize = LogTaskStackSize;	/* システムログタスクのスタックサイズ */
+
+		/* シリアルインタフェースドライバとの結合 */
+		cSerialPort        = SerialPort1.eSerialPort;
+		cnSerialPortManage = SerialPort1.enSerialPortManage;
+
+		/* システムログ機能との結合 */
+		cSysLog = SysLog.eSysLog;
+
+		/* 低レベル出力との結合 */
+		cPutLog = PutLogTarget.ePutLog;
+	};
+
+	cell tBanner Banner {
+		/* 属性の設定 */
+		targetName      = BannerTargetName;
+		copyrightNotice = BannerCopyrightNotice;
+	};
+};
+
+[singleton]
+celltype tExc01{
+	require tKernel.eKernel;			/* 呼び口名なし（例：delay）*/
+	/*require cKernel = tKernel.eKernel;/* 呼び口名あり（例：cKernel_delay）*/
+	require ciKernel = tKernel.eiKernel;/* 呼び口名あり（例：ciKernel_）*/
+
+	call sTask		    cTask[5];		/* タスク操作 */
+	call sCyclic        cCyclic;
+	call sAlarm         cAlarm;
+
+	[optional] call sSerialPort	cSerialPort;/* シリアルドライバとの接続 */
+	call sSysLog		cSysLog;		/* システムログ機能との接続 */
+
+	entry sTaskBody		eMainTask;	  	/* Mainタスク */
+	entry sTaskBody		eSampleTask[4];	/* 並行実行されるタスク */
+	
+	entry siHandlerBody eiCyclicHandler;/* 周期ハンドラ*/
+	entry siHandlerBody eiAlarmHandler; /* アラームハンドラ */
+};
+
+region rProcessor1Migratable{
+	cell tTask Task1 {
+		/* 呼び口の結合 */
+		cTaskBody = Exc01.eSampleTask[0];
+		  /* 属性の設定 */
+		priority = C_EXP("MID_PRIORITY");
+		stackSize = C_EXP("STACK_SIZE");
+	};
+
+	cell tTask Task2 {
+		/* 呼び口の結合 */
+		cTaskBody = Exc01.eSampleTask[1];
+		/* 属性の設定 */
+		priority = C_EXP("MID_PRIORITY");
+		stackSize = C_EXP("STACK_SIZE");
+	};
+
+	cell tTask Task3 {
+		/* 呼び口の結合 */
+		cTaskBody = Exc01.eSampleTask[2];
+		/* 属性の設定 */
+		priority = C_EXP("MID_PRIORITY");
+		stackSize = C_EXP("STACK_SIZE");
+	};
+
+	cell tTask Task4 {
+		/* 呼び口の結合 */
+		cTaskBody = Exc01.eSampleTask[3];
+		/* 属性の設定 */
+		priority = C_EXP("MID_PRIORITY");
+		stackSize = C_EXP("STACK_SIZE");
+	};
+};
+
+region rProcessor1Migratable{
+	cell tTask MainTask{
+		cTaskBody = Exc01.eMainTask;
+		attribute = C_EXP("TA_ACT");
+		priority = C_EXP("MAIN_PRIORITY");
+		stackSize = C_EXP("STACK_SIZE");		
+	};
+
+	cell tCyclicHandler CyclicHandler {
+		/* 呼び口の結合 */
+		ciHandlerBody = Exc01.eiCyclicHandler;
+		/* 属性の設定 */
+		cycleTime = 2000000;
+	};
+
+	cell tAlarmHandler AlarmHandler {
+		ciHandlerBody = Exc01.eiAlarmHandler;
+	};
+
+	cell tExc01 Exc01 {
+		/* 呼び口の結合 */
+		cTask[ 0 ] = MainTask.eTask;
+		cTask[ 1 ] = Task1.eTask;
+		cTask[ 2 ] = Task2.eTask;
+		cTask[ 3 ] = Task3.eTask;
+		cTask[ 4 ] = Task4.eTask;
+
+		cCyclic = CyclicHandler.eCyclic;
+		cAlarm  = AlarmHandler.eAlarm;
+
+		cSerialPort = SerialPort1.eSerialPort;
+		cSysLog = SysLog.eSysLog;
+	};
+};
+
+cell tKernel Kernel{
+};

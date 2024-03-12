@@ -1,0 +1,10 @@
+16:33:54 **** Incremental Build of configuration Default for project tTestSample ****
+make all 
+make[1]: Entering directory 'D:/hrmp3_3.3+tecs/target/zybo_z7_gcc/xilinx_sdk/tTestSample'
+make[1]: 'kernel_cfg.h' is up to date.
+make[1]: 'offset.h' is up to date.
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory 'D:/hrmp3_3.3+tecs/target/zybo_z7_gcc/xilinx_sdk/tTestSample'
+
+16:33:56 Build Finished (took 1s.877ms)
+

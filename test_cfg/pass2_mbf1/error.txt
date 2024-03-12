@@ -1,0 +1,3 @@
+../../test_cfg/pass2_mbf1.cfg:15: error: E_NOEXS: `MBF2' in SAC_MBF is not defined
+../../test_cfg/pass2_mbf1.cfg:21: error: E_OBJ: mbfid `MBF3' is duplicated in SAC_MBF
+make: *** [kernel_cfg.timestamp] Error 1

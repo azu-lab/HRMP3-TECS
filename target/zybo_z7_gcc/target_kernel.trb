@@ -1,0 +1,11 @@
+# -*- coding: utf-8 -*-
+#
+#		パス2の生成スクリプトのターゲット依存部（Zybo用）
+#
+#  $Id: target_kernel.trb 1086 2023-04-14 06:29:36Z ertl-honda $
+#
+
+#
+#  生成スクリプトのチップ依存部
+#
+IncludeTrb("chip_kernel.trb")

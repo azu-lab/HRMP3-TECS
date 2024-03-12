@@ -1,0 +1,7 @@
+/* tPutLogZyboZ7.cdl */ 
+
+[singleton]
+celltype tPutLogZyboZ7{
+	entry sPutLog ePutLog;
+	call sSIOPort cSIOPort;
+};

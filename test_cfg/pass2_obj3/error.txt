@@ -1,0 +1,18 @@
+../../test_cfg/pass2_obj3.cfg:29: error: E_OBJ: ACV_DOM is duplicated in a protection domain
+../../test_cfg/pass2_obj3.cfg:35: error: E_OBJ: ACV_DOM is duplicated in a protection domain
+../../test_cfg/pass2_obj3.cfg:40: error: E_OBJ: ACV_DOM is duplicated in a protection domain
+../../test_cfg/pass2_obj3.cfg:45: error: E_RSATR: illegal somatr `0x10U' in CRE_SOM of SOM1
+../../test_cfg/pass2_obj3.cfg:49: error: E_OBJ: more than one system operation modes with TA_INISOM attribute in CRE_SOM
+../../test_cfg/pass2_obj3.cfg:53: error: E_ID: illegal domid `0' in ATT_TWD
+../../test_cfg/pass2_obj3.cfg:54: error: E_ID: illegal domid `2' in ATT_TWD
+../../test_cfg/pass2_obj3.cfg:57: error: E_PAR: illegal twdlen `0' in ATT_TWD
+../../test_cfg/pass2_obj3.cfg:60: error: E_PAR: illegal twdlen `TMAX_TWDTIM + 1' in ATT_TWD
+error: E_PAR: total time window length 10000 of processor 1 and system operation mode `SOM2' must be shorter than the system cycle
+../../test_cfg/pass2_obj3.cfg:21: error: E_RSATR: illegal svcatr `0x10U' in DEF_SVC of fncd `1'
+../../test_cfg/pass2_obj3.cfg:24: error: E_PAR: illegal fncd `0' in DEF_SVC
+../../test_cfg/pass2_obj3.cfg:25: error: E_PAR: illegal fncd `-1' in DEF_SVC
+../../test_cfg/pass2_obj3.cfg:17: error: E_OBJ: SAC_SYS is duplicated
+../../test_cfg/pass2_obj3.cfg:68: error: E_PAR: illegal nfymode `0x08U' in ATT_TWD
+../../test_cfg/pass2_obj3.cfg:69: error: E_PAR: illegal nfymode `TNFY_HANDLER|TENFY_SETVAR' in ATT_TWD
+../../test_cfg/pass2_obj3.cfg:71: error: E_PAR: illegal nfymode `TNFY_ACTTSK|0x80U' in ATT_TWD
+make: *** [kernel_cfg.timestamp] Error 1

@@ -1,0 +1,340 @@
+/*
+ *      サンプルプログラム(2)のコンポーネント記述ファイル
+ *
+ *  $Id: tExc08.cdl 869 2018-01-04 10:44:46Z ertl-hiro $
+ */
+
+/*
+ *  カーネルオブジェクトの定義
+ */
+import(<kernel.cdl>);
+
+/*
+ *  ターゲット非依存のセルタイプの定義
+ */
+import("syssvc/tSerialPort.cdl");
+import("syssvc/tSerialAdapter.cdl");
+import("syssvc/tSysLog.cdl");
+import("syssvc/tSysLogAdapter.cdl");
+import("syssvc/tLogTask.cdl");
+import("syssvc/tBanner.cdl");
+
+/*
+ *  ターゲット依存部の取り込み
+ */
+import("target.cdl");
+
+/*
+ *  サンプルプログラムのC言語ヘッダファイルの取り込み
+ */
+import_C("tExc08.h");
+
+// RPC の定義をりこむ 
+import( "rpc.cdl" );
+import( "tDataqueueOWChannel.cdl" );
+
+/*
+ *      システムログ機能のアダプタの組上げ記述
+ *
+ *  システムログ機能のアダプタは，C言語で記述されたコードから，TECSベー
+ *  スのシステムログ機能を呼び出すためのセルである．システムログ機能の
+ *  サービスコール（syslog，syslog_0〜syslog_5，t_perrorを含む）を呼び
+ *  出さない場合には，以下のセルの組上げ記述を削除してよい．
+ */
+// region rOutOfDomain {
+region rKernelDomain{
+    region rProcessor1Migratable {
+        cell tSysLogAdapter SysLogAdapter {
+            cSysLog = rProcessor1Migratable::SysLog.eSysLog;
+        };
+
+        /*
+        *       シリアルインタフェースドライバのアダプタの組上げ記述
+        *
+        *  シリアルインタフェースドライバのアダプタは，C言語で記述されたコー
+        *  ドから，TECSベースのシリアルインタフェースドライバを呼び出すための
+        *  セルである．シリアルインタフェースドライバのサービスコールを呼び出
+        *  さない場合には，以下のセルの組上げ記述を削除してよい．
+        */
+        cell tSerialAdapter SerialAdapter {
+            cSerialPort[0] = rProcessor1Migratable::SerialPort1.eSerialPort;
+        };
+    };
+};
+
+/*
+ *  これ以降のセルは，カーネルドメイン内に含める
+ */
+region rKernelDomain {
+    region rProcessor1Migratable {
+
+        /*
+        *       システムログ機能の組上げ記述
+        *
+        *  システムログ機能を外す場合には，以下のセルの組上げ記述を削除し，コ
+        *  ンパイルオプションに-DTOPPERS_OMIT_SYSLOGを追加すればよい．ただし，
+        *  システムログタスクはシステムログ機能を使用するため，それも外すこと
+        *  が必要である．また，システムログ機能のアダプタも外さなければならな
+        *  い．tecsgenが警告メッセージを出すが，無視してよい．
+        */
+        cell tSysLog SysLog {
+            logBufferSize = 32;                 /* ログバッファのサイズ */
+            initLogMask = C_EXP("LOG_UPTO(LOG_NOTICE)");
+                                                /* ログバッファに記録すべき重要度 */
+            initLowMask = C_EXP("LOG_UPTO(LOG_EMERG)");
+                                                /* 低レベル出力すべき重要度 */
+            /* 低レベル出力との結合 */
+            cPutLog = rProcessor1Only::PutLogTarget.ePutLog;
+        };
+
+        /*
+        *       シリアルインタフェースドライバの組上げ記述
+        *
+        *  シリアルインタフェースドライバを外す場合には，以下のセルの組上げ記
+        *  述を削除すればよい．ただし，システムログタスクはシリアルインタフェー
+        *  スドライバを使用するため，それも外すことが必要である．また，シリア
+        *  ルインタフェースドライバのアダプタも外さなければならない．
+        */
+        cell tSerialPort SerialPort1 {
+            receiveBufferSize = 256;            /* 受信バッファのサイズ */
+            sendBufferSize    = 256;            /* 送信バッファのサイズ */
+
+            /* ターゲット依存部との結合 */
+            cSIOPort = rProcessor1Only::SIOPortTarget1.eSIOPort;
+            eiSIOCBR <= rProcessor1Only::SIOPortTarget1.ciSIOCBR;    /* コールバック */
+        };
+
+        /*
+        *       システムログタスクの組上げ記述
+        *
+        *  システムログタスクを外す場合には，以下のセルの組上げ記述を削除すれ
+        *  ばよい．
+        */
+        cell tLogTask LogTask {
+            priority  = 3;                  /* システムログタスクの優先度 */
+            stackSize = LogTaskStackSize;   /* システムログタスクのスタックサイズ */
+
+            /* シリアルインタフェースドライバとの結合 */
+            cSerialPort        = SerialPort1.eSerialPort;
+            cnSerialPortManage = SerialPort1.enSerialPortManage;
+
+            /* システムログ機能との結合 */
+            cSysLog = SysLog.eSysLog;
+
+            /* 低レベル出力との結合 */
+            cPutLog = rProcessor1Only::PutLogTarget.ePutLog;
+        };
+
+        /*
+        *       カーネル起動メッセージ出力の組上げ記述
+        *
+        *  カーネル起動メッセージの出力を外す場合には，以下のセルの組上げ記述
+        *  を削除すればよい．
+        */
+        cell tBanner Banner {
+            /* 属性の設定 */
+            targetName      = BannerTargetName;
+            copyrightNotice = BannerCopyrightNotice;
+        };
+    };
+};
+
+signature sService {
+    [oneway] ER migrate( [in]int_t no );    // no は cTask の添数を指定する (0..2)
+    [oneway] ER terminate( [in]int_t no );
+};
+
+/*
+ *      サンプルプログラムのセルタイプの定義
+ */
+//[singleton]      HRMP3 版では singleton ではない
+celltype tExc08 {
+    require tKernel.eKernel;            /* 呼び口名なし（例：delay）*/
+    /*require cKernel = tKernel.eKernel;/* 呼び口名あり（例：cKernel_delay）*/
+    require ciKernel = tKernel.eiKernel;/* 呼び口名あり（例：ciKernel_）*/
+
+    call sTask          cTask[3];   /* タスク操作 */
+    call sCyclic        cCyclic;
+    call sAlarm         cAlarm;
+
+    call sSerialPort    cSerialPort;    /* シリアルドライバとの接続 */
+    call sSysLog        cSysLog;        /* システムログ機能との接続 */
+    // call sService       cService;       //  DTQ を置き換える呼び口  #########
+    
+    entry sTaskBody     eMainTask;      /* Mainタスク */
+    entry sTaskBody     eSampleTask[4]; /* 並行実行されるタスク */
+    // entry sService      eService;       //  DTQ を置き換える受け口  #########
+
+    entry siHandlerBody eiCyclicHandler;    /* 周期ハンドラ*/
+    entry siHandlerBody eiAlarmHandler;     /* アラームハンドラ */
+
+    attr {
+        int  sampleNo;     /* 1 or 2, 1: run on PRC1, 2: run on PRC2*/
+        [size_is(4)]
+            char **taskName;
+    };
+
+};
+/*
+ *      組み上げ記述
+ */
+region rKernelDomain{
+region rProcessor1Migratable{
+    cell tTask Task1 {
+        /* 呼び口の結合 */
+        cTaskBody = rProcessor1Migratable::Exc08.eSampleTask[0];
+        /* 属性の設定 */
+        priority = C_EXP("MID_PRIORITY");
+        stackSize = C_EXP("STACK_SIZE");
+    };
+    
+    cell tTask Task2 {
+        /* 呼び口の結合 */
+        cTaskBody = rProcessor1Migratable::Exc08.eSampleTask[1];
+        /* 属性の設定 */
+        priority = C_EXP("MID_PRIORITY");
+        stackSize = C_EXP("STACK_SIZE");
+    };
+};
+
+[class(HRMP,"CLS_ALL_PRC2")]
+region rProcessor2Symmetric{
+    cell tTask Task3 {
+        /* 呼び口の結合 */
+        // cTaskBody = rProcessor2Symmetric::Exc08_2.eSampleTask[0];
+        cTaskBody = rProcessor1Migratable::Exc08.eSampleTask[2];
+        /* 属性の設定 */
+        priority = C_EXP("MID_PRIORITY");
+        stackSize = C_EXP("STACK_SIZE");
+    };
+    
+    cell tTask Task4 {
+        /* 呼び口の結合 */
+        // cTaskBody = rProcessor2Symmetric::Exc08_2.eSampleTask[1];
+        cTaskBody = rProcessor1Migratable::Exc08.eSampleTask[3];
+        /* 属性の設定 */
+        priority = C_EXP("MID_PRIORITY");
+        stackSize = C_EXP("STACK_SIZE");
+    };
+};
+};
+
+[domain(HRMP,"user")]
+region rUserDomain1{
+[class(HRMP,"CLS_ALL_PRC1")]
+region rProcessor1Migratable {
+    cell tTask MainTask {
+        /* 呼び口の結合 */
+        // cTaskBody = rProcessor1Migratable::Exc08.eMainTask;
+        cTaskBody = rKernelDomain::rProcessor1Migratable::Exc08.eMainTask;
+        /* 属性の設定 */
+        attribute = C_EXP("TA_ACT");
+        priority = C_EXP("MAIN_PRIORITY");
+        stackSize = C_EXP("STACK_SIZE");
+    };    
+};
+
+/*
+[class(HRMP,"CLS_ALL_PRC2")]
+region rProcessor2Symmetric {
+    cell tTask MainTask2 {
+        /* 呼び口の結合 *
+        // cTaskBody = rProcessor2Symmetric::Exc08_2.eMainTask;
+        cTaskBody = rKernelDomain::rProcessor2Symmetric::Exc08_2.eMainTask;
+        /* 属性の設定 *
+        attribute = C_EXP("TA_ACT");
+        priority = C_EXP("MAIN_PRIORITY");
+        stackSize = C_EXP("STACK_SIZE");
+    };
+};
+*/
+
+};
+
+
+region rKernelDomain{
+region rProcessor1Migratable {
+    cell tCyclicHandler CyclicHandler {
+        /* 呼び口の結合 */
+        ciHandlerBody = rProcessor1Migratable::Exc08.eiCyclicHandler;
+        /* 属性の設定 */
+        cycleTime = 2000000;
+    };
+
+    cell tAlarmHandler AlarmHandler {
+        /* 呼び口の結合 */
+        ciHandlerBody = rProcessor1Migratable::Exc08.eiAlarmHandler;
+    };
+};
+
+/*
+region rProcessor2Symmetric {
+    cell tCyclicHandler CyclicHandler2 {
+        /* 呼び口の結合 *
+        ciHandlerBody = rProcessor2Symmetric::Exc08_2.eiCyclicHandler;
+        /* 属性の設定 *
+        cycleTime = 2000000;
+    };
+
+    cell tAlarmHandler AlarmHandler2 {
+        /* 呼び口の結合 *
+        ciHandlerBody = rProcessor2Symmetric::Exc08_2.eiAlarmHandler;
+    };
+};
+*/
+
+
+region rProcessor1Migratable {
+    cell tExc08 Exc08 {
+        /* 呼び口の結合 */
+        // cTask[0] = rProcessor2Symmetric::MainTask2.eTask;
+        // cTask[0] = rUserDomain1::rProcessor2Symmetric::MainTask2.eTask;
+        // cTask[1] = rProcessor1Migratable::Task1.eTask;
+        // cTask[2] = rProcessor1Migratable::Task2.eTask;
+        
+        cTask[0] = rProcessor1Migratable::Task1.eTask;
+        cTask[1] = rProcessor1Migratable::Task2.eTask;
+        cTask[2] = rProcessor2Symmetric::Task3.eTask;
+        cTask[3] = rProcessor2Symmetric::Task4.eTask;
+
+        cCyclic = rProcessor1Migratable::CyclicHandler.eCyclic;
+        cAlarm  = rProcessor1Migratable::AlarmHandler.eAlarm;
+
+        cSerialPort = rProcessor1Migratable::SerialPort1.eSerialPort;
+        cSysLog     = rProcessor1Migratable::SysLog.eSysLog;
+        
+		/*
+        [through(RPCPlugin,"")]
+            cService    = rProcessor2Symmetric::Exc08_2.eService;
+		*/
+		
+        sampleNo = 1;
+        taskName = { "1_1", "1_2", "2_1", "2_2" };
+    };
+};
+/*
+region rProcessor2Symmetric {
+    cell tExc08 Exc08_2 {
+        /* 呼び口の結合 *
+        // cTask[0] = rProcessor1Migratable::MainTask.eTask;
+        cTask[0] = rUserDomain1::rProcessor1Migratable::MainTask.eTask;
+        cTask[1]= rProcessor2Symmetric::Task3.eTask;
+        cTask[2]= rProcessor2Symmetric::Task4.eTask;
+
+        cCyclic = rProcessor2Symmetric::CyclicHandler2.eCyclic;
+        cAlarm  = rProcessor2Symmetric::AlarmHandler2.eAlarm;
+
+        cSerialPort = rProcessor1Migratable::SerialPort1.eSerialPort;
+        cSysLog     = rProcessor1Migratable::SysLog.eSysLog;
+
+        [through(RPCPlugin,"")]
+            cService    = rProcessor1Migratable::Exc08.eService;
+
+        sampleNo = 2;
+        taskName = { "2_1", "2_2" };
+    };
+};
+*/
+cell tKernel Kernel {
+};
+};

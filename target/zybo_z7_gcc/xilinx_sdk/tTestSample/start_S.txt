@@ -1,0 +1,278 @@
+# 1 "../../../../arch/arm_gcc/common/start.S"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "../../../../arch/arm_gcc/common/start.S"
+# 52 "../../../../arch/arm_gcc/common/start.S"
+# 1 "../../../../kernel/kernel_impl.h" 1
+# 69 "../../../../kernel/kernel_impl.h"
+# 1 "../../../../kernel/kernel_rename.h" 1
+# 286 "../../../../kernel/kernel_rename.h"
+# 1 "../../../../target/zybo_z7_gcc/target_rename.h" 1
+# 14 "../../../../target/zybo_z7_gcc/target_rename.h"
+# 1 "../../../../arch/arm_gcc/zynq7000/chip_rename.h" 1
+# 13 "../../../../arch/arm_gcc/zynq7000/chip_rename.h"
+# 1 "../../../../arch/arm_gcc/common/core_rename.h" 1
+# 14 "../../../../arch/arm_gcc/zynq7000/chip_rename.h" 2
+# 15 "../../../../target/zybo_z7_gcc/target_rename.h" 2
+# 287 "../../../../kernel/kernel_rename.h" 2
+# 70 "../../../../kernel/kernel_impl.h" 2
+
+
+
+
+# 1 "../../../../include/kernel.h" 1
+# 64 "../../../../include/kernel.h"
+# 1 "../../../../include/t_stddef.h" 1
+# 65 "../../../../include/t_stddef.h"
+# 1 "../../../../target/zybo_z7_gcc/target_stddef.h" 1
+# 22 "../../../../target/zybo_z7_gcc/target_stddef.h"
+# 1 "../../../../arch/arm_gcc/zynq7000/chip_stddef.h" 1
+# 27 "../../../../arch/arm_gcc/zynq7000/chip_stddef.h"
+# 1 "../../../../arch/gcc/tool_stddef.h" 1
+# 28 "../../../../arch/arm_gcc/zynq7000/chip_stddef.h" 2
+
+
+
+
+# 1 "../../../../arch/arm_gcc/common/core_stddef.h" 1
+# 33 "../../../../arch/arm_gcc/zynq7000/chip_stddef.h" 2
+# 23 "../../../../target/zybo_z7_gcc/target_stddef.h" 2
+# 66 "../../../../include/t_stddef.h" 2
+# 65 "../../../../include/kernel.h" 2
+
+
+
+
+# 1 "../../../../target/zybo_z7_gcc/target_kernel.h" 1
+# 66 "../../../../target/zybo_z7_gcc/target_kernel.h"
+# 1 "../../../../arch/arm_gcc/zynq7000/chip_kernel.h" 1
+# 74 "../../../../arch/arm_gcc/zynq7000/chip_kernel.h"
+# 1 "../../../../arch/arm_gcc/common/core_kernel.h" 1
+# 75 "../../../../arch/arm_gcc/zynq7000/chip_kernel.h" 2
+# 67 "../../../../target/zybo_z7_gcc/target_kernel.h" 2
+# 70 "../../../../include/kernel.h" 2
+# 257 "../../../../include/kernel.h"
+# 1 "../../../../include/kernel_fncode.h" 1
+# 258 "../../../../include/kernel.h" 2
+# 1 "../../../../target/zybo_z7_gcc/target_svc.h" 1
+# 16 "../../../../target/zybo_z7_gcc/target_svc.h"
+# 1 "../../../../arch/arm_gcc/common/core_svc.h" 1
+# 17 "../../../../target/zybo_z7_gcc/target_svc.h" 2
+# 259 "../../../../include/kernel.h" 2
+# 1 "../../../../include/svc_call.h" 1
+# 260 "../../../../include/kernel.h" 2
+# 75 "../../../../kernel/kernel_impl.h" 2
+
+
+
+
+# 1 "../../../../include/t_syslog.h" 1
+# 80 "../../../../kernel/kernel_impl.h" 2
+# 132 "../../../../kernel/kernel_impl.h"
+# 1 "../../../../kernel/pcb.h" 1
+# 56 "../../../../kernel/pcb.h"
+# 1 "../../../../target/zybo_z7_gcc/target_pcb.h" 1
+# 18 "../../../../target/zybo_z7_gcc/target_pcb.h"
+# 1 "../../../../arch/arm_gcc/common/core_pcb.h" 1
+# 48 "../../../../arch/arm_gcc/common/core_pcb.h"
+# 1 "../../../../arch/arm_gcc/common/arm.h" 1
+# 49 "../../../../arch/arm_gcc/common/core_pcb.h" 2
+# 19 "../../../../target/zybo_z7_gcc/target_pcb.h" 2
+# 57 "../../../../kernel/pcb.h" 2
+# 133 "../../../../kernel/kernel_impl.h" 2
+
+
+
+
+# 1 "../../../../target/zybo_z7_gcc/target_kernel_impl.h" 1
+# 56 "../../../../target/zybo_z7_gcc/target_kernel_impl.h"
+# 1 "../../../../target/zybo_z7_gcc/zybo_z7.h" 1
+# 57 "../../../../target/zybo_z7_gcc/target_kernel_impl.h" 2
+# 72 "../../../../target/zybo_z7_gcc/target_kernel_impl.h"
+# 1 "../../../../arch/arm_gcc/zynq7000/chip_kernel_impl.h" 1
+# 57 "../../../../arch/arm_gcc/zynq7000/chip_kernel_impl.h"
+# 1 "../../../../arch/arm_gcc/zynq7000/zynq7000.h" 1
+# 58 "../../../../arch/arm_gcc/zynq7000/chip_kernel_impl.h" 2
+# 91 "../../../../arch/arm_gcc/zynq7000/chip_kernel_impl.h"
+# 1 "../../../../arch/arm_gcc/common/mpcore_kernel_impl.h" 1
+# 57 "../../../../arch/arm_gcc/common/mpcore_kernel_impl.h"
+# 1 "../../../../arch/arm_gcc/common/mpcore.h" 1
+# 47 "../../../../arch/arm_gcc/common/mpcore.h"
+# 1 "../../../../include/sil.h" 1
+# 68 "../../../../include/sil.h"
+# 1 "../../../../target/zybo_z7_gcc/target_sil.h" 1
+# 22 "../../../../target/zybo_z7_gcc/target_sil.h"
+# 1 "../../../../arch/arm_gcc/common/core_sil.h" 1
+# 23 "../../../../target/zybo_z7_gcc/target_sil.h" 2
+# 69 "../../../../include/sil.h" 2
+# 48 "../../../../arch/arm_gcc/common/mpcore.h" 2
+# 58 "../../../../arch/arm_gcc/common/mpcore_kernel_impl.h" 2
+# 70 "../../../../arch/arm_gcc/common/mpcore_kernel_impl.h"
+# 1 "../../../../arch/arm_gcc/common/gic_kernel_impl.h" 1
+# 393 "../../../../arch/arm_gcc/common/gic_kernel_impl.h"
+# 1 "../../../../arch/arm_gcc/common/core_kernel_impl.h" 1
+# 394 "../../../../arch/arm_gcc/common/gic_kernel_impl.h" 2
+# 71 "../../../../arch/arm_gcc/common/mpcore_kernel_impl.h" 2
+# 92 "../../../../arch/arm_gcc/zynq7000/chip_kernel_impl.h" 2
+# 73 "../../../../target/zybo_z7_gcc/target_kernel_impl.h" 2
+# 138 "../../../../kernel/kernel_impl.h" 2
+
+
+
+
+
+# 1 "../../../../kernel/allfunc.h" 1
+# 144 "../../../../kernel/kernel_impl.h" 2
+# 53 "../../../../arch/arm_gcc/common/start.S" 2
+# 1 "../../../../arch/arm_gcc/common/core_asm.inc" 1
+# 71 "../../../../arch/arm_gcc/common/core_asm.inc"
+ .macro asm_data_memory_barrier reg1
+
+
+
+
+
+
+ dmb
+
+ .endm
+
+
+
+
+ .macro asm_data_sync_barrier reg1
+
+
+
+
+
+
+ dsb
+
+ .endm
+
+
+
+
+ .macro asm_inst_sync_barrier reg1
+
+
+
+
+
+
+ isb
+
+ .endm
+
+.macro my_core_index re_reg
+ mrc p15, 0, \re_reg, c0, c0, 5
+ and \re_reg, \re_reg, #0x0f
+.endm
+
+
+.macro my_pcb re_reg sc_reg1
+ mrc p15, 0, \re_reg, c13, c0, 4
+.endm
+# 128 "../../../../arch/arm_gcc/common/core_asm.inc"
+.macro my_istkpt re_reg sc_reg1
+ mrc p15, 0, \re_reg, c0, c0, 5
+ and \sc_reg1, \re_reg, #0x0f
+ ldr \re_reg, =_kernel_istkpt_table
+ ldr \re_reg, [\re_reg, \sc_reg1, asl #2]
+.endm
+# 54 "../../../../arch/arm_gcc/common/start.S" 2
+# 63 "../../../../arch/arm_gcc/common/start.S"
+ .text
+ .align 2
+ .global start
+start:
+
+
+
+
+
+ msr cpsr_cxsf, #((0x13) | ((0x40) | (0x80)))
+
+
+
+
+ my_istkpt sp, r0
+ mov fp, #0
+ mov r7, #0
+
+
+
+
+
+
+
+ ldr r0, =hardware_init_hook
+ cmp r0, #0
+ movne lr, pc
+ bxne r0
+
+
+
+
+ my_core_index r0
+ cmp r0, #(1 - 1)
+ bne slave_wait
+
+
+
+
+ bl _kernel_initialize_sections
+
+
+
+
+
+
+
+ ldr r0, =software_init_hook
+ cmp r0, #0
+ movne lr, pc
+ bxne r0
+
+
+
+
+
+
+start_6:
+ bl _kernel_target_mprc_initialize
+
+
+
+
+start_7:
+ ldr r0, =_kernel_start_sync
+ ldr r1, =0x87654321
+ mov r2, #0
+start_8:
+ str r1, [r0, r2]
+ add r2, r2, #4
+ cmp r2, #(2 * 4)
+
+ bne start_8
+
+
+ my_core_index r1
+ str r2, [r0, r1, lsl #2]
+ bl sta_ker
+
+
+
+
+slave_wait:
+ my_core_index r0
+ ldr r1, =_kernel_start_sync
+slave_wait_1:
+ ldr r2, =0x87654321
+ ldr r3, [r1, r0, lsl #2]
+ cmp r3, r2
+ bne slave_wait_1
+ mov r4, #0
+ str r4, [r1, r0, lsl #2]
+ bl sta_ker

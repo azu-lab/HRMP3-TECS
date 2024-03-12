@@ -1,0 +1,2408 @@
+__tool_info__ ("tecsgen") {
+    "tecscde_version"     : "0.5.1.0",
+    "cde_format_version"  : "0.5.0.0",
+    "save_date"           : "2020-08-31T22:36:04+00:00",
+    "base_dir" : [
+        "C:/cygwin64/home/hiro2/TECS/hrmp3/hrmp3+tecs/obj-tecs",
+        "C:/cygwin64/home/hiro2/TECS/hrmp3/hrmp3+tecs-new/sample",
+        "C:/cygwin64/home/hiro2/TECS/fmp3/hrmp3+tecs",
+        "C:/cygwin64/home/hiro2/TECS/fmp3/hrmp3+tecs/sample",
+        "C:/cygwin64/home/hiro2/TECS/fmp3/hrmp3+tecs/obj-tecs2"
+    ],
+    "define_macro" : [
+
+    ],
+   "import_path" : [
+        ".",
+        "../include",
+        "../target/zybo_z7_gcc",
+        "../arch/arm_gcc/zynq7000",
+        "../arch/arm_gcc/common",
+        "../arch/gcc",
+        "..",
+        "../sample",
+        "./gen",
+        "../tecs_kernel",
+        "../tecsgen/tecs",
+        "../tecsgen/tecs/rpc"
+    ],
+    "direct_import" : [
+        "../sample/tSample2.cdl"
+    ],
+    "cpp"    : "arm-none-eabi-gcc  -D__TARGET_ARCH_ARM=7  -I. -I../include  -I../target/zybo_gcc -I../arch/arm_gcc/zynq7000 -I../arch/arm_gcc/common -I../arch/gcc -I.. -I../sample -I./gen -I../tecs_kernel -I../tecsgen/tecs -I../tecsgen/tecs/rpc  -D TECSGEN -E"
+}
+
+
+/*************************************************
+ *         TOOL INFORMATION FOR TECSCDE          *
+ *     This  information is used by tecscde      *
+ *  please don't touch if you are not familiar   *
+ ************************************************/
+__tool_info__ ("tecscde") {
+    "paper" : {
+       "type" : "paper",
+       "size" :  "A2",
+       "orientation" :  "LANDSCAPE"
+    },
+    "cell_list" : [
+        {       /** cell_list[ 0 ] **/
+            "type"     : "cell_location",
+            "name"     : "SIOPortTarget1",
+            "location" : [ 352.0, 188.0, 25.0, 15.0 ],
+            "region"   : "::rKernelDomain::rProcessor1Symmetric",
+            "port_location" : [
+                {
+                    "type"      : "port_location",
+                    "port_name" : "ciSIOCBR",
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 13.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eSIOPort",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 10.0
+                }
+            ]
+        },
+        {       /** cell_list[ 1 ] **/
+            "type"     : "cell_location",
+            "name"     : "PutLogTarget",
+            "location" : [ 326.0, 144.0, 25.0, 15.0 ],
+            "region"   : "::rKernelDomain::rProcessor1Symmetric",
+            "port_location" : [
+                {
+                    "type"      : "port_location",
+                    "port_name" : "cSIOPort",
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 4.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "ePutLog",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 12.0
+                }
+            ]
+        },
+        {       /** cell_list[ 2 ] **/
+            "type"     : "cell_location",
+            "name"     : "SysLogAdapter",
+            "location" : [ 310.0, 10.0, 25.0, 15.0 ],
+            "region"   : "::rOutOfDomain::rProcessor1Symmetric",
+            "port_location" : [
+                {
+                    "type"      : "port_location",
+                    "port_name" : "cSysLog",
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 11.0
+                }
+            ]
+        },
+        {       /** cell_list[ 3 ] **/
+            "type"     : "cell_location",
+            "name"     : "SerialAdapter",
+            "location" : [ 395.0, 23.0, 25.0, 15.0 ],
+            "region"   : "::rOutOfDomain::rProcessor1Symmetric",
+            "port_location" : [
+                {
+                    "type"      : "port_location",
+                    "port_name" : "cSerialPort",
+                    "subscript" : 0,
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 11.0
+                }
+            ]
+        },
+        {       /** cell_list[ 4 ] **/
+            "type"     : "cell_location",
+            "name"     : "SysLog",
+            "location" : [ 317.0, 110.0, 25.0, 15.0 ],
+            "region"   : "::rKernelDomain::rProcessor1Symmetric",
+            "port_location" : [
+                {
+                    "type"      : "port_location",
+                    "port_name" : "cPutLog",
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 4.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eSysLog",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 12.0
+                }
+            ]
+        },
+        {       /** cell_list[ 5 ] **/
+            "type"     : "cell_location",
+            "name"     : "SerialPort1",
+            "location" : [ 373.0, 144.0, 25.0, 15.0 ],
+            "region"   : "::rKernelDomain::rProcessor1Symmetric",
+            "port_location" : [
+                {
+                    "type"      : "port_location",
+                    "port_name" : "cSIOPort",
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 11.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eSerialPort",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 11.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "enSerialPortManage",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 6.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eiSIOCBR",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 16.0
+                }
+            ]
+        },
+        {       /** cell_list[ 6 ] **/
+            "type"     : "cell_location",
+            "name"     : "LogTask",
+            "location" : [ 351.0, 57.0, 25.0, 15.0 ],
+            "region"   : "::rKernelDomain::rProcessor1Symmetric",
+            "port_location" : [
+                {
+                    "type"      : "port_location",
+                    "port_name" : "cSerialPort",
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 22.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "cnSerialPortManage",
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 16.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "cSysLog",
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 5.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "cPutLog",
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 10.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eLogTask",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 4.0
+                }
+            ]
+        },
+        {       /** cell_list[ 7 ] **/
+            "type"     : "cell_location",
+            "name"     : "Banner",
+            "location" : [ 235.0, 181.0, 25.0, 15.0 ],
+            "region"   : "::rKernelDomain::rProcessor1Symmetric",
+            "port_location" : [
+
+            ]
+        },
+        {       /** cell_list[ 8 ] **/
+            "type"     : "cell_location",
+            "name"     : "Task1",
+            "location" : [ 53.0, 56.0, 25.0, 15.0 ],
+            "region"   : "::rUserDomain1::rProcessor1Symmetric",
+            "port_location" : [
+                {
+                    "type"      : "port_location",
+                    "port_name" : "cTaskBody",
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 4.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eTask",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 4.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eiTask",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 8.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eiActivateNotificationHandler",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 12.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eiWakeUpNotificationHandler",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 16.0
+                }
+            ]
+        },
+        {       /** cell_list[ 9 ] **/
+            "type"     : "cell_location",
+            "name"     : "Task2",
+            "location" : [ 81.0, 56.0, 25.0, 15.0 ],
+            "region"   : "::rUserDomain1::rProcessor1Symmetric",
+            "port_location" : [
+                {
+                    "type"      : "port_location",
+                    "port_name" : "cTaskBody",
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 4.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eTask",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 4.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eiTask",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 8.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eiActivateNotificationHandler",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 12.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eiWakeUpNotificationHandler",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 16.0
+                }
+            ]
+        },
+        {       /** cell_list[ 10 ] **/
+            "type"     : "cell_location",
+            "name"     : "Task2_1",
+            "location" : [ 49.0, 230.0, 25.0, 15.0 ],
+            "region"   : "::rUserDomain1::rProcessor2Symmetric",
+            "port_location" : [
+                {
+                    "type"      : "port_location",
+                    "port_name" : "cTaskBody",
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 4.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eTask",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 4.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eiTask",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 8.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eiActivateNotificationHandler",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 12.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eiWakeUpNotificationHandler",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 16.0
+                }
+            ]
+        },
+        {       /** cell_list[ 11 ] **/
+            "type"     : "cell_location",
+            "name"     : "Task2_2",
+            "location" : [ 77.0, 230.0, 25.0, 15.0 ],
+            "region"   : "::rUserDomain1::rProcessor2Symmetric",
+            "port_location" : [
+                {
+                    "type"      : "port_location",
+                    "port_name" : "cTaskBody",
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 5.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eTask",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 4.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eiTask",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 8.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eiActivateNotificationHandler",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 12.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eiWakeUpNotificationHandler",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 16.0
+                }
+            ]
+        },
+        {       /** cell_list[ 12 ] **/
+            "type"     : "cell_location",
+            "name"     : "Task3",
+            "location" : [ 109.0, 56.0, 25.0, 15.0 ],
+            "region"   : "::rUserDomain2::rProcessor2Symmetric",
+            "port_location" : [
+                {
+                    "type"      : "port_location",
+                    "port_name" : "cTaskBody",
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 4.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eTask",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 4.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eiTask",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 8.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eiActivateNotificationHandler",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 12.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eiWakeUpNotificationHandler",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 16.0
+                }
+            ]
+        },
+        {       /** cell_list[ 13 ] **/
+            "type"     : "cell_location",
+            "name"     : "Task2_3",
+            "location" : [ 106.0, 230.0, 25.0, 15.0 ],
+            "region"   : "::rUserDomain2::rProcessor1Symmetric",
+            "port_location" : [
+                {
+                    "type"      : "port_location",
+                    "port_name" : "cTaskBody",
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 4.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eTask",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 4.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eiTask",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 8.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eiActivateNotificationHandler",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 12.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eiWakeUpNotificationHandler",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 16.0
+                }
+            ]
+        },
+        {       /** cell_list[ 14 ] **/
+            "type"     : "cell_location",
+            "name"     : "MainTask",
+            "location" : [ 26.0, 56.0, 25.0, 15.0 ],
+            "region"   : "::rKernelDomain::rProcessor1Symmetric",
+            "port_location" : [
+                {
+                    "type"      : "port_location",
+                    "port_name" : "cTaskBody",
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 4.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eTask",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 4.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eiTask",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 8.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eiActivateNotificationHandler",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 12.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eiWakeUpNotificationHandler",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 16.0
+                }
+            ]
+        },
+        {       /** cell_list[ 15 ] **/
+            "type"     : "cell_location",
+            "name"     : "ExceptionTask",
+            "location" : [ 137.0, 56.0, 25.0, 15.0 ],
+            "region"   : "::rKernelDomain::rProcessor1Symmetric",
+            "port_location" : [
+                {
+                    "type"      : "port_location",
+                    "port_name" : "cTaskBody",
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 4.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eTask",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 4.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eiTask",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 8.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eiActivateNotificationHandler",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 12.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eiWakeUpNotificationHandler",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 16.0
+                }
+            ]
+        },
+        {       /** cell_list[ 16 ] **/
+            "type"     : "cell_location",
+            "name"     : "CyclicHandler",
+            "location" : [ 166.0, 56.0, 25.0, 15.0 ],
+            "region"   : "::rKernelDomain::rProcessor1Symmetric",
+            "port_location" : [
+                {
+                    "type"      : "port_location",
+                    "port_name" : "ciHandlerBody",
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 4.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eCyclic",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 4.0
+                }
+            ]
+        },
+        {       /** cell_list[ 17 ] **/
+            "type"     : "cell_location",
+            "name"     : "AlarmHandler",
+            "location" : [ 195.0, 56.0, 25.0, 15.0 ],
+            "region"   : "::rKernelDomain::rProcessor1Symmetric",
+            "port_location" : [
+                {
+                    "type"      : "port_location",
+                    "port_name" : "ciHandlerBody",
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 4.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eAlarm",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 4.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eiAlarm",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 8.0
+                }
+            ]
+        },
+        {       /** cell_list[ 18 ] **/
+            "type"     : "cell_location",
+            "name"     : "InterruptRequest",
+            "location" : [ 236.0, 145.0, 26.0, 15.0 ],
+            "region"   : "::rKernelDomain::rProcessor1Symmetric",
+            "port_location" : [
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eInterruptRequest",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 4.0
+                }
+            ]
+        },
+        {       /** cell_list[ 19 ] **/
+            "type"     : "cell_location",
+            "name"     : "InterruptServiceRoutine",
+            "location" : [ 224.0, 56.0, 35.0, 15.0 ],
+            "region"   : "::rKernelDomain::rProcessor1Symmetric",
+            "port_location" : [
+                {
+                    "type"      : "port_location",
+                    "port_name" : "ciISRBody",
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 4.0
+                }
+            ]
+        },
+        {       /** cell_list[ 20 ] **/
+            "type"     : "cell_location",
+            "name"     : "CpuExceptionHandler",
+            "location" : [ 263.0, 56.0, 32.0, 15.0 ],
+            "region"   : "::rKernelDomain::rProcessor1Symmetric",
+            "port_location" : [
+                {
+                    "type"      : "port_location",
+                    "port_name" : "ciCpuExceptionHandlerBody",
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 4.0
+                }
+            ]
+        },
+        {       /** cell_list[ 21 ] **/
+            "type"     : "cell_location",
+            "name"     : "MainTask2",
+            "location" : [ 21.0, 230.0, 25.0, 15.0 ],
+            "region"   : "::rKernelDomain::rProcessor2Symmetric",
+            "port_location" : [
+                {
+                    "type"      : "port_location",
+                    "port_name" : "cTaskBody",
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 4.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eTask",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 4.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eiTask",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 8.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eiActivateNotificationHandler",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 12.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eiWakeUpNotificationHandler",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 16.0
+                }
+            ]
+        },
+        {       /** cell_list[ 22 ] **/
+            "type"     : "cell_location",
+            "name"     : "ExceptionTask2",
+            "location" : [ 133.0, 230.0, 25.0, 15.0 ],
+            "region"   : "::rKernelDomain::rProcessor2Symmetric",
+            "port_location" : [
+                {
+                    "type"      : "port_location",
+                    "port_name" : "cTaskBody",
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 4.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eTask",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 4.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eiTask",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 8.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eiActivateNotificationHandler",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 12.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eiWakeUpNotificationHandler",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 16.0
+                }
+            ]
+        },
+        {       /** cell_list[ 23 ] **/
+            "type"     : "cell_location",
+            "name"     : "CyclicHandler2",
+            "location" : [ 163.0, 231.0, 25.0, 15.0 ],
+            "region"   : "::rKernelDomain::rProcessor2Symmetric",
+            "port_location" : [
+                {
+                    "type"      : "port_location",
+                    "port_name" : "ciHandlerBody",
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 4.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eCyclic",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 4.0
+                }
+            ]
+        },
+        {       /** cell_list[ 24 ] **/
+            "type"     : "cell_location",
+            "name"     : "AlarmHandler2",
+            "location" : [ 193.0, 231.0, 25.0, 15.0 ],
+            "region"   : "::rKernelDomain::rProcessor2Symmetric",
+            "port_location" : [
+                {
+                    "type"      : "port_location",
+                    "port_name" : "ciHandlerBody",
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 4.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eAlarm",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 4.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eiAlarm",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 8.0
+                }
+            ]
+        },
+        {       /** cell_list[ 25 ] **/
+            "type"     : "cell_location",
+            "name"     : "InterruptRequest2",
+            "location" : [ 266.0, 145.0, 26.0, 15.0 ],
+            "region"   : "::rKernelDomain::rProcessor2Symmetric",
+            "port_location" : [
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eInterruptRequest",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 4.0
+                }
+            ]
+        },
+        {       /** cell_list[ 26 ] **/
+            "type"     : "cell_location",
+            "name"     : "InterruptServiceRoutine2",
+            "location" : [ 221.0, 231.0, 36.0, 15.0 ],
+            "region"   : "::rKernelDomain::rProcessor2Symmetric",
+            "port_location" : [
+                {
+                    "type"      : "port_location",
+                    "port_name" : "ciISRBody",
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 4.0
+                }
+            ]
+        },
+        {       /** cell_list[ 27 ] **/
+            "type"     : "cell_location",
+            "name"     : "CpuExceptionHandler2",
+            "location" : [ 262.0, 231.0, 32.0, 15.0 ],
+            "region"   : "::rKernelDomain::rProcessor2Symmetric",
+            "port_location" : [
+                {
+                    "type"      : "port_location",
+                    "port_name" : "ciCpuExceptionHandlerBody",
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 4.0
+                }
+            ]
+        },
+        {       /** cell_list[ 28 ] **/
+            "type"     : "cell_location",
+            "name"     : "Sample2",
+            "location" : [ 70.0, 131.0, 40.0, 15.0 ],
+            "region"   : "::rOutOfDomain::rProcessor1Symmetric",
+            "port_location" : [
+                {
+                    "type"      : "port_location",
+                    "port_name" : "cTask",
+                    "subscript" : 0,
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 4.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "cTask",
+                    "subscript" : 1,
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 8.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "cTask",
+                    "subscript" : 2,
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 12.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "cTask",
+                    "subscript" : 3,
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 16.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "cExceptionTask",
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 20.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "cCyclic",
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 31.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "cAlarm",
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 35.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "cSerialPort",
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 24.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "cSysLog",
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 28.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eMainTask",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 4.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eSampleTask",
+                    "subscript" : 0,
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 8.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eSampleTask",
+                    "subscript" : 1,
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 12.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eSampleTask",
+                    "subscript" : 2,
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 16.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eExceptionTask",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 20.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eiCyclicHandler",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 24.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eiAlarmHandler",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 28.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eiISR",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 32.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eiCpuExceptionHandler",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 36.0
+                }
+            ]
+        },
+        {       /** cell_list[ 29 ] **/
+            "type"     : "cell_location",
+            "name"     : "Sample2_2",
+            "location" : [ 70.0, 311.0, 40.0, 15.0 ],
+            "region"   : "::rOutOfDomain::rProcessor2Symmetric",
+            "port_location" : [
+                {
+                    "type"      : "port_location",
+                    "port_name" : "cTask",
+                    "subscript" : 0,
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 4.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "cTask",
+                    "subscript" : 1,
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 8.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "cTask",
+                    "subscript" : 2,
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 12.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "cTask",
+                    "subscript" : 3,
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 16.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "cExceptionTask",
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 20.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "cCyclic",
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 24.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "cAlarm",
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 28.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "cSerialPort",
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 32.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "cSysLog",
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 36.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eMainTask",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 4.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eSampleTask",
+                    "subscript" : 0,
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 8.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eSampleTask",
+                    "subscript" : 1,
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 12.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eSampleTask",
+                    "subscript" : 2,
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 16.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eExceptionTask",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 20.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eiCyclicHandler",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 24.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eiAlarmHandler",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 28.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eiISR",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 32.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eiCpuExceptionHandler",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 36.0
+                }
+            ]
+        },
+        {       /** cell_list[ 30 ] **/
+            "type"     : "cell_location",
+            "name"     : "HRMPKernel",
+            "location" : [ 268.0, 182.0, 25.0, 15.0 ],
+            "region"   : "::",
+            "port_location" : [
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eKernel",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 4.0
+                },
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eiKernel",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 8.0
+                }
+            ]
+        },
+        {       /** cell_list[ 31 ] **/
+            "type"     : "cell_location",
+            "name"     : "Join_domain_to_through__0SVCCaller",
+            "location" : [ 393.0, 67.0, 54.0, 15.0 ],
+            "region"   : "::rOutOfDomain",
+            "port_location" : [
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eEntry",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 4.0
+                }
+            ]
+        },
+        {       /** cell_list[ 32 ] **/
+            "type"     : "cell_location",
+            "name"     : "Join_domain_to_through__1SVCCaller",
+            "location" : [ 309.0, 37.0, 53.0, 15.0 ],
+            "region"   : "::rOutOfDomain",
+            "port_location" : [
+                {
+                    "type"      : "port_location",
+                    "port_name" : "eEntry",
+                    "edge"      : "EDGE_TOP",
+                    "offset"    : 4.0
+                }
+            ]
+        },
+        {       /** cell_list[ 33 ] **/
+            "type"     : "cell_location",
+            "name"     : "SVCBody_SerialPort1_eSerialPort",
+            "location" : [ 393.0, 86.0, 46.0, 15.0 ],
+            "region"   : "::rKernelDomain::rProcessor1Symmetric",
+            "port_location" : [
+                {
+                    "type"      : "port_location",
+                    "port_name" : "cCall",
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 4.0
+                }
+            ]
+        },
+        {       /** cell_list[ 34 ] **/
+            "type"     : "cell_location",
+            "name"     : "SVCBody_SysLog_eSysLog",
+            "location" : [ 309.0, 57.0, 36.0, 15.0 ],
+            "region"   : "::rKernelDomain::rProcessor1Symmetric",
+            "port_location" : [
+                {
+                    "type"      : "port_location",
+                    "port_name" : "cCall",
+                    "edge"      : "EDGE_BOTTOM",
+                    "offset"    : 4.0
+                }
+            ]
+        }
+    ],
+    "join_list" : [
+        {       /** join_list[ 0 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "SIOPortTarget1",
+            "call_region" : "::rKernelDomain::rProcessor1Symmetric",
+            "call_port"   : "ciSIOCBR",
+            "entry_cell"  : "SerialPort1",
+            "entry_region": "::rKernelDomain::rProcessor1Symmetric",
+            "entry_port"  : "eiSIOCBR",
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 213.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 401.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 134.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 389.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 144.0
+                }
+            ]
+        },
+        {       /** join_list[ 1 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "PutLogTarget",
+            "call_region" : "::rKernelDomain::rProcessor1Symmetric",
+            "call_port"   : "cSIOPort",
+            "entry_cell"  : "SIOPortTarget1",
+            "entry_region": "::rKernelDomain::rProcessor1Symmetric",
+            "entry_port"  : "eSIOPort",
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 169.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 330.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 178.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 362.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 188.0
+                }
+            ]
+        },
+        {       /** join_list[ 2 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "SysLogAdapter",
+            "call_region" : "::rOutOfDomain::rProcessor1Symmetric",
+            "call_port"   : "cSysLog",
+            "entry_cell"  : "SysLog",
+            "entry_region": "::rKernelDomain::rProcessor1Symmetric",
+            "entry_port"  : "eSysLog",
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 34.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 313.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 90.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 329.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 110.0
+                }
+            ]
+        },
+        {       /** join_list[ 3 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "SerialAdapter",
+            "call_region" : "::rOutOfDomain::rProcessor1Symmetric",
+            "call_port"   : "cSerialPort",
+            "call_port_subscript" : 0,
+            "entry_cell"  : "SerialPort1",
+            "entry_region": "::rKernelDomain::rProcessor1Symmetric",
+            "entry_port"  : "eSerialPort",
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 55.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 397.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 120.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 384.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 144.0
+                }
+            ]
+        },
+        {       /** join_list[ 4 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "SysLog",
+            "call_region" : "::rKernelDomain::rProcessor1Symmetric",
+            "call_port"   : "cPutLog",
+            "entry_cell"  : "PutLogTarget",
+            "entry_region": "::rKernelDomain::rProcessor1Symmetric",
+            "entry_port"  : "ePutLog",
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 132.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 321.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 133.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 338.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 144.0
+                }
+            ]
+        },
+        {       /** join_list[ 5 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "SerialPort1",
+            "call_region" : "::rKernelDomain::rProcessor1Symmetric",
+            "call_port"   : "cSIOPort",
+            "entry_cell"  : "SIOPortTarget1",
+            "entry_region": "::rKernelDomain::rProcessor1Symmetric",
+            "entry_port"  : "eSIOPort",
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 169.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 383.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 178.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 362.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 188.0
+                }
+            ]
+        },
+        {       /** join_list[ 6 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "LogTask",
+            "call_region" : "::rKernelDomain::rProcessor1Symmetric",
+            "call_port"   : "cSerialPort",
+            "entry_cell"  : "SerialPort1",
+            "entry_region": "::rKernelDomain::rProcessor1Symmetric",
+            "entry_port"  : "eSerialPort",
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 86.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 384.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 99.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 384.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 144.0
+                }
+            ]
+        },
+        {       /** join_list[ 7 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "LogTask",
+            "call_region" : "::rKernelDomain::rProcessor1Symmetric",
+            "call_port"   : "cnSerialPortManage",
+            "entry_cell"  : "SerialPort1",
+            "entry_region": "::rKernelDomain::rProcessor1Symmetric",
+            "entry_port"  : "enSerialPortManage",
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 91.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 367.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 107.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 379.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 144.0
+                }
+            ]
+        },
+        {       /** join_list[ 8 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "LogTask",
+            "call_region" : "::rKernelDomain::rProcessor1Symmetric",
+            "call_port"   : "cSysLog",
+            "entry_cell"  : "SysLog",
+            "entry_region": "::rKernelDomain::rProcessor1Symmetric",
+            "entry_port"  : "eSysLog",
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 90.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 352.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 90.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 329.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 110.0
+                }
+            ]
+        },
+        {       /** join_list[ 9 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "LogTask",
+            "call_region" : "::rKernelDomain::rProcessor1Symmetric",
+            "call_port"   : "cPutLog",
+            "entry_cell"  : "PutLogTarget",
+            "entry_region": "::rKernelDomain::rProcessor1Symmetric",
+            "entry_port"  : "ePutLog",
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 107.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 354.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 133.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 338.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 144.0
+                }
+            ]
+        },
+        {       /** join_list[ 10 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "Task1",
+            "call_region" : "::rUserDomain1::rProcessor1Symmetric",
+            "call_port"   : "cTaskBody",
+            "entry_cell"  : "Sample2",
+            "entry_region": "::rOutOfDomain::rProcessor1Symmetric",
+            "entry_port"  : "eSampleTask",
+            "entry_port_subscript" : 0,
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 87.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 63.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 96.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 78.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 131.0
+                }
+            ]
+        },
+        {       /** join_list[ 11 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "Task2",
+            "call_region" : "::rUserDomain1::rProcessor1Symmetric",
+            "call_port"   : "cTaskBody",
+            "entry_cell"  : "Sample2",
+            "entry_region": "::rOutOfDomain::rProcessor1Symmetric",
+            "entry_port"  : "eSampleTask",
+            "entry_port_subscript" : 1,
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 85.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 81.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 121.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 82.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 131.0
+                }
+            ]
+        },
+        {       /** join_list[ 12 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "Task2_1",
+            "call_region" : "::rUserDomain1::rProcessor2Symmetric",
+            "call_port"   : "cTaskBody",
+            "entry_cell"  : "Sample2_2",
+            "entry_region": "::rOutOfDomain::rProcessor2Symmetric",
+            "entry_port"  : "eSampleTask",
+            "entry_port_subscript" : 0,
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 255.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 53.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 290.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 78.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 311.0
+                }
+            ]
+        },
+        {       /** join_list[ 13 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "Task2_2",
+            "call_region" : "::rUserDomain1::rProcessor2Symmetric",
+            "call_port"   : "cTaskBody",
+            "entry_cell"  : "Sample2_2",
+            "entry_region": "::rOutOfDomain::rProcessor2Symmetric",
+            "entry_port"  : "eSampleTask",
+            "entry_port_subscript" : 1,
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 255.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 82.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 290.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 82.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 311.0
+                }
+            ]
+        },
+        {       /** join_list[ 14 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "Task3",
+            "call_region" : "::rUserDomain2::rProcessor2Symmetric",
+            "call_port"   : "cTaskBody",
+            "entry_cell"  : "Sample2",
+            "entry_region": "::rOutOfDomain::rProcessor1Symmetric",
+            "entry_port"  : "eSampleTask",
+            "entry_port_subscript" : 2,
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 85.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 99.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 99.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 86.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 131.0
+                }
+            ]
+        },
+        {       /** join_list[ 15 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "Task2_3",
+            "call_region" : "::rUserDomain2::rProcessor1Symmetric",
+            "call_port"   : "cTaskBody",
+            "entry_cell"  : "Sample2_2",
+            "entry_region": "::rOutOfDomain::rProcessor2Symmetric",
+            "entry_port"  : "eSampleTask",
+            "entry_port_subscript" : 2,
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 261.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 86.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 283.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 86.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 311.0
+                }
+            ]
+        },
+        {       /** join_list[ 16 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "MainTask",
+            "call_region" : "::rKernelDomain::rProcessor1Symmetric",
+            "call_port"   : "cTaskBody",
+            "entry_cell"  : "Sample2",
+            "entry_region": "::rOutOfDomain::rProcessor1Symmetric",
+            "entry_port"  : "eMainTask",
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 93.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 47.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 111.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 74.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 131.0
+                }
+            ]
+        },
+        {       /** join_list[ 17 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "ExceptionTask",
+            "call_region" : "::rKernelDomain::rProcessor1Symmetric",
+            "call_port"   : "cTaskBody",
+            "entry_cell"  : "Sample2",
+            "entry_region": "::rOutOfDomain::rProcessor1Symmetric",
+            "entry_port"  : "eExceptionTask",
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 87.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 115.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 101.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 90.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 131.0
+                }
+            ]
+        },
+        {       /** join_list[ 18 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "CyclicHandler",
+            "call_region" : "::rKernelDomain::rProcessor1Symmetric",
+            "call_port"   : "ciHandlerBody",
+            "entry_cell"  : "Sample2",
+            "entry_region": "::rOutOfDomain::rProcessor1Symmetric",
+            "entry_port"  : "eiCyclicHandler",
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 91.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 121.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 105.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 94.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 131.0
+                }
+            ]
+        },
+        {       /** join_list[ 19 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "AlarmHandler",
+            "call_region" : "::rKernelDomain::rProcessor1Symmetric",
+            "call_port"   : "ciHandlerBody",
+            "entry_cell"  : "Sample2",
+            "entry_region": "::rOutOfDomain::rProcessor1Symmetric",
+            "entry_port"  : "eiAlarmHandler",
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 95.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 163.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 109.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 98.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 131.0
+                }
+            ]
+        },
+        {       /** join_list[ 20 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "InterruptServiceRoutine",
+            "call_region" : "::rKernelDomain::rProcessor1Symmetric",
+            "call_port"   : "ciISRBody",
+            "entry_cell"  : "Sample2",
+            "entry_region": "::rOutOfDomain::rProcessor1Symmetric",
+            "entry_port"  : "eiISR",
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 114.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 126.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 112.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 102.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 131.0
+                }
+            ]
+        },
+        {       /** join_list[ 21 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "CpuExceptionHandler",
+            "call_region" : "::rKernelDomain::rProcessor1Symmetric",
+            "call_port"   : "ciCpuExceptionHandlerBody",
+            "entry_cell"  : "Sample2",
+            "entry_region": "::rOutOfDomain::rProcessor1Symmetric",
+            "entry_port"  : "eiCpuExceptionHandler",
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 122.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 153.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 116.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 106.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 131.0
+                }
+            ]
+        },
+        {       /** join_list[ 22 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "MainTask2",
+            "call_region" : "::rKernelDomain::rProcessor2Symmetric",
+            "call_port"   : "cTaskBody",
+            "entry_cell"  : "Sample2_2",
+            "entry_region": "::rOutOfDomain::rProcessor2Symmetric",
+            "entry_port"  : "eMainTask",
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 297.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 51.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 297.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 74.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 311.0
+                }
+            ]
+        },
+        {       /** join_list[ 23 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "ExceptionTask2",
+            "call_region" : "::rKernelDomain::rProcessor2Symmetric",
+            "call_port"   : "cTaskBody",
+            "entry_cell"  : "Sample2_2",
+            "entry_region": "::rOutOfDomain::rProcessor2Symmetric",
+            "entry_port"  : "eExceptionTask",
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 255.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 134.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 263.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 90.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 311.0
+                }
+            ]
+        },
+        {       /** join_list[ 24 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "CyclicHandler2",
+            "call_region" : "::rKernelDomain::rProcessor2Symmetric",
+            "call_port"   : "ciHandlerBody",
+            "entry_cell"  : "Sample2_2",
+            "entry_region": "::rOutOfDomain::rProcessor2Symmetric",
+            "entry_port"  : "eiCyclicHandler",
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 268.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 115.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 268.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 94.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 311.0
+                }
+            ]
+        },
+        {       /** join_list[ 25 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "AlarmHandler2",
+            "call_region" : "::rKernelDomain::rProcessor2Symmetric",
+            "call_port"   : "ciHandlerBody",
+            "entry_cell"  : "Sample2_2",
+            "entry_region": "::rOutOfDomain::rProcessor2Symmetric",
+            "entry_port"  : "eiAlarmHandler",
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 256.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 197.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 273.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 98.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 311.0
+                }
+            ]
+        },
+        {       /** join_list[ 26 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "InterruptServiceRoutine2",
+            "call_region" : "::rKernelDomain::rProcessor2Symmetric",
+            "call_port"   : "ciISRBody",
+            "entry_cell"  : "Sample2_2",
+            "entry_region": "::rOutOfDomain::rProcessor2Symmetric",
+            "entry_port"  : "eiISR",
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 256.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 225.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 278.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 102.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 311.0
+                }
+            ]
+        },
+        {       /** join_list[ 27 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "CpuExceptionHandler2",
+            "call_region" : "::rKernelDomain::rProcessor2Symmetric",
+            "call_port"   : "ciCpuExceptionHandlerBody",
+            "entry_cell"  : "Sample2_2",
+            "entry_region": "::rOutOfDomain::rProcessor2Symmetric",
+            "entry_port"  : "eiCpuExceptionHandler",
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 256.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 266.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 284.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 106.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 311.0
+                }
+            ]
+        },
+        {       /** join_list[ 28 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "Sample2",
+            "call_region" : "::rOutOfDomain::rProcessor1Symmetric",
+            "call_port"   : "cTask",
+            "call_port_subscript" : 0,
+            "entry_cell"  : "MainTask2",
+            "entry_region": "::rKernelDomain::rProcessor2Symmetric",
+            "entry_port"  : "eTask",
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 156.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 39.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 179.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 25.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 230.0
+                }
+            ]
+        },
+        {       /** join_list[ 29 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "Sample2",
+            "call_region" : "::rOutOfDomain::rProcessor1Symmetric",
+            "call_port"   : "cTask",
+            "call_port_subscript" : 1,
+            "entry_cell"  : "Task1",
+            "entry_region": "::rUserDomain1::rProcessor1Symmetric",
+            "entry_port"  : "eTask",
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 160.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 21.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 29.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 57.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 56.0
+                }
+            ]
+        },
+        {       /** join_list[ 30 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "Sample2",
+            "call_region" : "::rOutOfDomain::rProcessor1Symmetric",
+            "call_port"   : "cTask",
+            "call_port_subscript" : 2,
+            "entry_cell"  : "Task2",
+            "entry_region": "::rUserDomain1::rProcessor1Symmetric",
+            "entry_port"  : "eTask",
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 162.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 18.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 26.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 85.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 56.0
+                }
+            ]
+        },
+        {       /** join_list[ 31 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "Sample2",
+            "call_region" : "::rOutOfDomain::rProcessor1Symmetric",
+            "call_port"   : "cTask",
+            "call_port_subscript" : 3,
+            "entry_cell"  : "Task3",
+            "entry_region": "::rUserDomain2::rProcessor2Symmetric",
+            "entry_port"  : "eTask",
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 164.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 16.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 23.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 113.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 56.0
+                }
+            ]
+        },
+        {       /** join_list[ 32 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "Sample2",
+            "call_region" : "::rOutOfDomain::rProcessor1Symmetric",
+            "call_port"   : "cExceptionTask",
+            "entry_cell"  : "ExceptionTask",
+            "entry_region": "::rKernelDomain::rProcessor1Symmetric",
+            "entry_port"  : "eTask",
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 166.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 13.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 19.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 141.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 56.0
+                }
+            ]
+        },
+        {       /** join_list[ 33 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "Sample2",
+            "call_region" : "::rOutOfDomain::rProcessor1Symmetric",
+            "call_port"   : "cCyclic",
+            "entry_cell"  : "CyclicHandler",
+            "entry_region": "::rKernelDomain::rProcessor1Symmetric",
+            "entry_port"  : "eCyclic",
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 165.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 301.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 39.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 170.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 56.0
+                }
+            ]
+        },
+        {       /** join_list[ 34 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "Sample2",
+            "call_region" : "::rOutOfDomain::rProcessor1Symmetric",
+            "call_port"   : "cAlarm",
+            "entry_cell"  : "AlarmHandler",
+            "entry_region": "::rKernelDomain::rProcessor1Symmetric",
+            "entry_port"  : "eAlarm",
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 162.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 298.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 44.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 199.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 56.0
+                }
+            ]
+        },
+        {       /** join_list[ 35 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "Sample2",
+            "call_region" : "::rOutOfDomain::rProcessor1Symmetric",
+            "call_port"   : "cSerialPort",
+            "entry_cell"  : "SerialPort1",
+            "entry_region": "::rKernelDomain::rProcessor1Symmetric",
+            "entry_port"  : "eSerialPort",
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 171.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 405.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 120.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 384.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 144.0
+                }
+            ]
+        },
+        {       /** join_list[ 36 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "Sample2",
+            "call_region" : "::rOutOfDomain::rProcessor1Symmetric",
+            "call_port"   : "cSysLog",
+            "entry_cell"  : "SysLog",
+            "entry_region": "::rKernelDomain::rProcessor1Symmetric",
+            "entry_port"  : "eSysLog",
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 168.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 312.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 90.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 329.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 110.0
+                }
+            ]
+        },
+        {       /** join_list[ 37 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "Sample2_2",
+            "call_region" : "::rOutOfDomain::rProcessor2Symmetric",
+            "call_port"   : "cTask",
+            "call_port_subscript" : 0,
+            "entry_cell"  : "MainTask",
+            "entry_region": "::rKernelDomain::rProcessor1Symmetric",
+            "entry_port"  : "eTask",
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 336.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 7.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 46.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 30.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 56.0
+                }
+            ]
+        },
+        {       /** join_list[ 38 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "Sample2_2",
+            "call_region" : "::rOutOfDomain::rProcessor2Symmetric",
+            "call_port"   : "cTask",
+            "call_port_subscript" : 1,
+            "entry_cell"  : "Task2_1",
+            "entry_region": "::rUserDomain1::rProcessor2Symmetric",
+            "entry_port"  : "eTask",
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 339.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 19.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 200.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 53.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 230.0
+                }
+            ]
+        },
+        {       /** join_list[ 39 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "Sample2_2",
+            "call_region" : "::rOutOfDomain::rProcessor2Symmetric",
+            "call_port"   : "cTask",
+            "call_port_subscript" : 2,
+            "entry_cell"  : "Task2_2",
+            "entry_region": "::rUserDomain1::rProcessor2Symmetric",
+            "entry_port"  : "eTask",
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 341.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 16.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 197.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 81.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 230.0
+                }
+            ]
+        },
+        {       /** join_list[ 40 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "Sample2_2",
+            "call_region" : "::rOutOfDomain::rProcessor2Symmetric",
+            "call_port"   : "cTask",
+            "call_port_subscript" : 3,
+            "entry_cell"  : "Task2_3",
+            "entry_region": "::rUserDomain2::rProcessor1Symmetric",
+            "entry_port"  : "eTask",
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 343.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 13.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 195.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 110.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 230.0
+                }
+            ]
+        },
+        {       /** join_list[ 41 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "Sample2_2",
+            "call_region" : "::rOutOfDomain::rProcessor2Symmetric",
+            "call_port"   : "cExceptionTask",
+            "entry_cell"  : "ExceptionTask2",
+            "entry_region": "::rKernelDomain::rProcessor2Symmetric",
+            "entry_port"  : "eTask",
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 346.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 10.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 193.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 137.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 230.0
+                }
+            ]
+        },
+        {       /** join_list[ 42 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "Sample2_2",
+            "call_region" : "::rOutOfDomain::rProcessor2Symmetric",
+            "call_port"   : "cCyclic",
+            "entry_cell"  : "CyclicHandler2",
+            "entry_region": "::rKernelDomain::rProcessor2Symmetric",
+            "entry_port"  : "eCyclic",
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 347.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 301.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 210.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 167.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 231.0
+                }
+            ]
+        },
+        {       /** join_list[ 43 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "Sample2_2",
+            "call_region" : "::rOutOfDomain::rProcessor2Symmetric",
+            "call_port"   : "cAlarm",
+            "entry_cell"  : "AlarmHandler2",
+            "entry_region": "::rKernelDomain::rProcessor2Symmetric",
+            "entry_port"  : "eAlarm",
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 344.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 297.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 216.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 197.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 231.0
+                }
+            ]
+        },
+        {       /** join_list[ 44 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "Sample2_2",
+            "call_region" : "::rOutOfDomain::rProcessor2Symmetric",
+            "call_port"   : "cSerialPort",
+            "entry_cell"  : "SerialPort1",
+            "entry_region": "::rKernelDomain::rProcessor1Symmetric",
+            "entry_port"  : "eSerialPort",
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 341.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 405.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 120.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 384.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 144.0
+                }
+            ]
+        },
+        {       /** join_list[ 45 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "Sample2_2",
+            "call_region" : "::rOutOfDomain::rProcessor2Symmetric",
+            "call_port"   : "cSysLog",
+            "entry_cell"  : "SysLog",
+            "entry_region": "::rKernelDomain::rProcessor1Symmetric",
+            "entry_port"  : "eSysLog",
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 338.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 312.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 90.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 329.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 110.0
+                }
+            ]
+        },
+        {       /** join_list[ 46 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "SVCBody_SerialPort1_eSerialPort",
+            "call_region" : "::rKernelDomain::rProcessor1Symmetric",
+            "call_port"   : "cCall",
+            "entry_cell"  : "SerialPort1",
+            "entry_region": "::rKernelDomain::rProcessor1Symmetric",
+            "entry_port"  : "eSerialPort",
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 121.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 397.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 120.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 384.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 144.0
+                }
+            ]
+        },
+        {       /** join_list[ 47 ] **/
+            "type"        : "join_location",
+            "call_cell"   : "SVCBody_SysLog_eSysLog",
+            "call_region" : "::rKernelDomain::rProcessor1Symmetric",
+            "call_port"   : "cCall",
+            "entry_cell"  : "SysLog",
+            "entry_region": "::rKernelDomain::rProcessor1Symmetric",
+            "entry_port"  : "eSysLog",
+            "bar_list"    : [
+                {
+                     "type"     : "VBar",
+                     "position" : 82.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 313.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 90.0
+                },                {
+                     "type"     : "HBar",
+                     "position" : 329.0
+                },                {
+                     "type"     : "VBar",
+                     "position" : 110.0
+                }
+            ]
+        }
+    ]
+}

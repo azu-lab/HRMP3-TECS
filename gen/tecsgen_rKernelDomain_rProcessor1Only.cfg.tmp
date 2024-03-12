@@ -1,0 +1,6 @@
+ATT_MOD("tScycTime_rKernelDomain_rProcessor1Only_tecsgen.o");/* GenAttMod 003 */
+ATT_MOD("tScycTime.o");                                     /* GenAttMod 004 */
+ATT_MOD("tSOM_rKernelDomain_rProcessor1Only_tecsgen.o");    /* GenAttMod 003 */
+ATT_MOD("tSOM.o");                                          /* GenAttMod 004 */
+ATT_MOD("tTimeWindow_rKernelDomain_rProcessor1Only_tecsgen.o");/* GenAttMod 003 */
+ATT_MOD("tTimeWindow.o");                                   /* GenAttMod 004 */

@@ -1,0 +1,3 @@
+../../test_cfg/pass2_scy1.cfg:10: error: E_PAR: illegal scyctim `0' in DEF_SCY
+../../test_cfg/pass2_scy1.cfg:13: error: E_OBJ: DEF_SCY is duplicated
+make: *** [kernel_cfg.timestamp] Error 1

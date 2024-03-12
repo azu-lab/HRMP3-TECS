@@ -1,0 +1,39 @@
+../../test_cfg/pass2_cls1.cfg:135: error: E_ID: illegal class `CLS_LARGE'
+../../test_cfg/pass2_cls1.cfg:228: error: E_ID: illegal class `CLS_LARGE'
+../../test_cfg/pass2_cls1.cfg:214: error: E_RSATR: DEF_SCY must be outside of classes
+../../test_cfg/pass2_cls1.cfg:217: error: E_RSATR: CRE_SOM must be outside of classes
+../../test_cfg/pass2_cls1.cfg:218: error: E_RSATR: CRE_SOM must be outside of classes
+../../test_cfg/pass2_cls1.cfg:225: error: E_RSATR: ATT_TWD must be within a class
+../../test_cfg/pass2_cls1.cfg:205: error: E_RSATR: ATT_REG must be outside of classes
+../../test_cfg/pass2_cls1.cfg:208: error: E_RSATR: ATT_MEM must be outside of classes
+../../test_cfg/pass2_cls1.cfg:211: error: E_RSATR: ATT_PMA must be outside of classes
+../../test_cfg/pass2_cls1.cfg:37: error: E_RSATR: SAC_TSK of TASK1 must be within the same class with CRE_TSK
+../../test_cfg/pass2_cls1.cfg:81: error: E_RSATR: CRE_TSK of TASK2 must be within a class
+../../test_cfg/pass2_cls1.cfg:40: error: E_RSATR: SAC_SEM of SEM1 must be within the same class with CRE_SEM
+../../test_cfg/pass2_cls1.cfg:84: error: E_RSATR: CRE_SEM of SEM2 must be within a class
+../../test_cfg/pass2_cls1.cfg:44: error: E_RSATR: SAC_FLG of FLG1 must be within the same class with CRE_FLG
+../../test_cfg/pass2_cls1.cfg:87: error: E_RSATR: CRE_FLG of FLG2 must be within a class
+../../test_cfg/pass2_cls1.cfg:47: error: E_RSATR: SAC_DTQ of DTQ1 must be within the same class with CRE_DTQ
+../../test_cfg/pass2_cls1.cfg:90: error: E_RSATR: CRE_DTQ of DTQ2 must be within a class
+../../test_cfg/pass2_cls1.cfg:51: error: E_RSATR: SAC_PDQ of PDQ1 must be within the same class with CRE_PDQ
+../../test_cfg/pass2_cls1.cfg:93: error: E_RSATR: CRE_PDQ of PDQ2 must be within a class
+../../test_cfg/pass2_cls1.cfg:55: error: E_RSATR: SAC_MTX of MTX1 must be within the same class with CRE_MTX
+../../test_cfg/pass2_cls1.cfg:96: error: E_RSATR: CRE_MTX of MTX2 must be within a class
+../../test_cfg/pass2_cls1.cfg:59: error: E_RSATR: SAC_MBF of MBF1 must be within the same class with CRE_MBF
+../../test_cfg/pass2_cls1.cfg:99: error: E_RSATR: CRE_MBF of MBF2 must be within a class
+../../test_cfg/pass2_cls1.cfg:62: error: E_RSATR: SAC_SPN of SPN1 must be within the same class with CRE_SPN
+../../test_cfg/pass2_cls1.cfg:102: error: E_RSATR: CRE_SPN of SPN2 must be within a class
+../../test_cfg/pass2_cls1.cfg:66: error: E_RSATR: SAC_MPF of MPF1 must be within the same class with CRE_MPF
+../../test_cfg/pass2_cls1.cfg:105: error: E_RSATR: CRE_MPF of MPF2 must be within a class
+../../test_cfg/pass2_cls1.cfg:69: error: E_RSATR: SAC_CYC of CYC1 must be within the same class with CRE_CYC
+../../test_cfg/pass2_cls1.cfg:108: error: E_RSATR: CRE_CYC of CYC2 must be within a class
+../../test_cfg/pass2_cls1.cfg:73: error: E_RSATR: SAC_ALM of ALM1 must be within the same class with CRE_ALM
+../../test_cfg/pass2_cls1.cfg:111: error: E_RSATR: CRE_ALM of ALM2 must be within a class
+../../test_cfg/pass2_cls1.cfg:114: error: E_RSATR: CFG_INT must be within a class
+../../test_cfg/pass2_cls1.cfg:115: error: E_RSATR: CFG_INT must be within a class
+../../test_cfg/pass2_cls1.cfg:121: error: E_RSATR: DEF_INH must be within a class
+../../test_cfg/pass2_cls1.cfg:118: error: E_RSATR: CRE_ISR must be within a class
+../../test_cfg/pass2_cls1.cfg:124: error: E_RSATR: DEF_EXC must be within a class
+../../test_cfg/pass2_cls1.cfg:28: error: E_RSATR: DEF_SVC must be outside of classes
+../../test_cfg/pass2_cls1.cfg:127: error: E_RSATR: DEF_ICS must be within a class
+make: *** [kernel_cfg.timestamp] Error 1

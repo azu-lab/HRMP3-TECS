@@ -1,0 +1,98 @@
+../../test_cfg/pass4_all2.cfg:173: error: E_PAR: size `0x2000000' is too large in ATT_MEM
+../../test_cfg/pass4_all2.cfg:169: error: E_OBJ: memory object registered with ATT_MEM overlaps with another memory object
+../../test_cfg/pass4_all2.cfg:177: error: E_OBJ: memory object registered with ATT_PMA overlaps with another memory object
+../../test_cfg/pass4_all2.cfg:28: error: E_OBJ: user stack area registered with CRE_TSK overlaps with another memory object
+../../test_cfg/pass4_all2.cfg:20: error: E_PAR: sstk `ADD1(stack_TASK1)' is not aligned in CRE_TSK of TASK1
+../../test_cfg/pass4_all2.cfg:22: error: E_PAR: sstk `0' is null in CRE_TSK of TASK2
+../../test_cfg/pass4_all2.cfg:34: error: E_OBJ: system stack area is not included in any kernel memory object in CRE_TSK of TASK4
+../../test_cfg/pass4_all2.cfg:148: error: E_OBJ: stack area is not included in any kernel memory object in CRE_TSK of TASK5
+../../test_cfg/pass4_all2.cfg:39: error: E_OBJ: memory pool area is not included in any memory object in CRE_MPF of MPF1
+../../test_cfg/pass4_all2.cfg:42: error: E_OACV: tskid `TASK6' cannot be accessed from protection domain `DOM1' in CRE_CYC of CYC1
+../../test_cfg/pass4_all2.cfg:43: error: E_OACV: tskid `TASK6' cannot be accessed from protection domain `DOM1' in CRE_CYC of CYC2
+../../test_cfg/pass4_all2.cfg:44: error: E_OACV: tskid `TASK6' cannot be accessed from protection domain `DOM1' in CRE_CYC of CYC3
+../../test_cfg/pass4_all2.cfg:46: error: E_OACV: tskid `TASK6' cannot be accessed from protection domain `DOM1' in CRE_CYC of CYC4
+../../test_cfg/pass4_all2.cfg:50: error: E_OACV: semid `SEM1' cannot be accessed from protection domain `DOM1' in CRE_CYC of CYC5
+../../test_cfg/pass4_all2.cfg:51: error: E_OACV: semid `SEM1' cannot be accessed from protection domain `DOM1' in CRE_CYC of CYC6
+../../test_cfg/pass4_all2.cfg:55: error: E_OACV: flgid `FLG1' cannot be accessed from protection domain `DOM1' in CRE_CYC of CYC7
+../../test_cfg/pass4_all2.cfg:56: error: E_OACV: flgid `FLG1' cannot be accessed from protection domain `DOM1' in CRE_CYC of CYC8
+../../test_cfg/pass4_all2.cfg:60: error: E_OACV: dtqid `DTQ1' cannot be accessed from protection domain `DOM1' in CRE_CYC of CYC9
+../../test_cfg/pass4_all2.cfg:61: error: E_OACV: dtqid `DTQ1' cannot be accessed from protection domain `DOM1' in CRE_CYC of CYC10
+../../test_cfg/pass4_all2.cfg:65: error: E_MACV: p_var `&nvar3' cannot be accessed from protection domain `DOM1' in CRE_CYC of CYC11
+../../test_cfg/pass4_all2.cfg:66: error: E_MACV: p_var `&nvar3' cannot be accessed from protection domain `DOM1' in CRE_CYC of CYC12
+../../test_cfg/pass4_all2.cfg:71: error: E_MACV: p_var `&nvar5' cannot be accessed from protection domain `DOM1' in CRE_CYC of CYC15
+../../test_cfg/pass4_all2.cfg:72: error: E_MACV: p_var `&nvar5' cannot be accessed from protection domain `DOM1' in CRE_CYC of CYC16
+../../test_cfg/pass4_all2.cfg:80: error: E_MACV: p_var `&nvar3' cannot be accessed from protection domain `DOM1' in CRE_CYC of CYC19
+../../test_cfg/pass4_all2.cfg:81: error: E_MACV: p_var `&nvar3' cannot be accessed from protection domain `DOM1' in CRE_CYC of CYC20
+../../test_cfg/pass4_all2.cfg:83: error: E_MACV: p_var `&nvar4' cannot be accessed from protection domain `DOM1' in CRE_CYC of CYC21
+../../test_cfg/pass4_all2.cfg:84: error: E_MACV: p_var `&nvar4' cannot be accessed from protection domain `DOM1' in CRE_CYC of CYC22
+../../test_cfg/pass4_all2.cfg:86: error: E_MACV: p_var `&nvar5' cannot be accessed from protection domain `DOM1' in CRE_CYC of CYC23
+../../test_cfg/pass4_all2.cfg:87: error: E_MACV: p_var `&nvar5' cannot be accessed from protection domain `DOM1' in CRE_CYC of CYC24
+../../test_cfg/pass4_all2.cfg:89: error: E_MACV: p_var `&nvar6' cannot be accessed from protection domain `DOM1' in CRE_CYC of CYC25
+../../test_cfg/pass4_all2.cfg:90: error: E_MACV: p_var `&nvar6' cannot be accessed from protection domain `DOM1' in CRE_CYC of CYC26
+../../test_cfg/pass4_all2.cfg:94: error: E_OACV: tskid `TASK6' cannot be accessed from protection domain `DOM1' in CRE_ALM of ALM1
+../../test_cfg/pass4_all2.cfg:95: error: E_OACV: tskid `TASK6' cannot be accessed from protection domain `DOM1' in CRE_ALM of ALM2
+../../test_cfg/pass4_all2.cfg:96: error: E_OACV: tskid `TASK6' cannot be accessed from protection domain `DOM1' in CRE_ALM of ALM3
+../../test_cfg/pass4_all2.cfg:97: error: E_OACV: tskid `TASK6' cannot be accessed from protection domain `DOM1' in CRE_ALM of ALM4
+../../test_cfg/pass4_all2.cfg:100: error: E_OACV: semid `SEM1' cannot be accessed from protection domain `DOM1' in CRE_ALM of ALM5
+../../test_cfg/pass4_all2.cfg:101: error: E_OACV: semid `SEM1' cannot be accessed from protection domain `DOM1' in CRE_ALM of ALM6
+../../test_cfg/pass4_all2.cfg:104: error: E_OACV: flgid `FLG1' cannot be accessed from protection domain `DOM1' in CRE_ALM of ALM7
+../../test_cfg/pass4_all2.cfg:105: error: E_OACV: flgid `FLG1' cannot be accessed from protection domain `DOM1' in CRE_ALM of ALM8
+../../test_cfg/pass4_all2.cfg:109: error: E_OACV: dtqid `DTQ1' cannot be accessed from protection domain `DOM1' in CRE_ALM of ALM9
+../../test_cfg/pass4_all2.cfg:110: error: E_OACV: dtqid `DTQ1' cannot be accessed from protection domain `DOM1' in CRE_ALM of ALM10
+../../test_cfg/pass4_all2.cfg:113: error: E_MACV: p_var `&nvar3' cannot be accessed from protection domain `DOM1' in CRE_ALM of ALM11
+../../test_cfg/pass4_all2.cfg:114: error: E_MACV: p_var `&nvar3' cannot be accessed from protection domain `DOM1' in CRE_ALM of ALM12
+../../test_cfg/pass4_all2.cfg:119: error: E_MACV: p_var `&nvar5' cannot be accessed from protection domain `DOM1' in CRE_ALM of ALM15
+../../test_cfg/pass4_all2.cfg:120: error: E_MACV: p_var `&nvar5' cannot be accessed from protection domain `DOM1' in CRE_ALM of ALM16
+../../test_cfg/pass4_all2.cfg:128: error: E_MACV: p_var `&nvar3' cannot be accessed from protection domain `DOM1' in CRE_ALM of ALM19
+../../test_cfg/pass4_all2.cfg:129: error: E_MACV: p_var `&nvar3' cannot be accessed from protection domain `DOM1' in CRE_ALM of ALM20
+../../test_cfg/pass4_all2.cfg:131: error: E_MACV: p_var `&nvar4' cannot be accessed from protection domain `DOM1' in CRE_ALM of ALM21
+../../test_cfg/pass4_all2.cfg:132: error: E_MACV: p_var `&nvar4' cannot be accessed from protection domain `DOM1' in CRE_ALM of ALM22
+../../test_cfg/pass4_all2.cfg:134: error: E_MACV: p_var `&nvar5' cannot be accessed from protection domain `DOM1' in CRE_ALM of ALM23
+../../test_cfg/pass4_all2.cfg:135: error: E_MACV: p_var `&nvar5' cannot be accessed from protection domain `DOM1' in CRE_ALM of ALM24
+../../test_cfg/pass4_all2.cfg:137: error: E_MACV: p_var `&nvar6' cannot be accessed from protection domain `DOM1' in CRE_ALM of ALM25
+../../test_cfg/pass4_all2.cfg:138: error: E_MACV: p_var `&nvar6' cannot be accessed from protection domain `DOM1' in CRE_ALM of ALM26
+../../test_cfg/pass4_all2.cfg:163: error: E_PAR: extsvc `ADD1(extended_svc1)' is not aligned in DEF_SVC of fncd `1'
+../../test_cfg/pass4_all2.cfg:164: error: E_PAR: extsvc `0' is null in DEF_SVC of fncd `2'
+../../test_cfg/pass4_all2.cfg:189: error: E_ID: illegal tskid `TSKID_LARGE' in ATT_TWD
+../../test_cfg/pass4_all2.cfg:190: error: E_ID: illegal tskid `TSKID_LARGE' in ATT_TWD
+../../test_cfg/pass4_all2.cfg:191: error: E_ID: illegal tskid `TSKID_LARGE' in ATT_TWD
+../../test_cfg/pass4_all2.cfg:193: error: E_ID: illegal tskid `TSKID_LARGE' in ATT_TWD
+../../test_cfg/pass4_all2.cfg:197: error: E_ID: illegal semid `SEMID_LARGE' in ATT_TWD
+../../test_cfg/pass4_all2.cfg:198: error: E_ID: illegal semid `SEMID_LARGE' in ATT_TWD
+../../test_cfg/pass4_all2.cfg:202: error: E_ID: illegal flgid `FLGID_LARGE' in ATT_TWD
+../../test_cfg/pass4_all2.cfg:203: error: E_ID: illegal flgid `FLGID_LARGE' in ATT_TWD
+../../test_cfg/pass4_all2.cfg:207: error: E_ID: illegal dtqid `DTQID_LARGE' in ATT_TWD
+../../test_cfg/pass4_all2.cfg:209: error: E_ID: illegal dtqid `DTQID_LARGE' in ATT_TWD
+../../test_cfg/pass4_all2.cfg:213: error: E_PAR: p_var `ADD1(&nvar1)' is not aligned in ATT_TWD
+../../test_cfg/pass4_all2.cfg:214: error: E_PAR: p_var `0' is null in ATT_TWD
+../../test_cfg/pass4_all2.cfg:217: error: E_PAR: p_var `ADD1(&nvar1)' is not aligned in ATT_TWD
+../../test_cfg/pass4_all2.cfg:219: error: E_PAR: p_var `0' is null in ATT_TWD
+../../test_cfg/pass4_all2.cfg:222: error: E_PAR: p_var `ADD1(&nvar2)' is not aligned in ATT_TWD
+../../test_cfg/pass4_all2.cfg:223: error: E_PAR: p_var `0' is null in ATT_TWD
+../../test_cfg/pass4_all2.cfg:224: error: E_PAR: p_var `ADD1(&nvar2)' is not aligned in ATT_TWD
+../../test_cfg/pass4_all2.cfg:226: error: E_PAR: p_var `0' is null in ATT_TWD
+../../test_cfg/pass4_all2.cfg:229: error: E_OACV: tskid `TASK6' cannot be accessed from protection domain `DOM1' in ATT_TWD
+../../test_cfg/pass4_all2.cfg:230: error: E_OACV: tskid `TASK6' cannot be accessed from protection domain `DOM1' in ATT_TWD
+../../test_cfg/pass4_all2.cfg:231: error: E_OACV: tskid `TASK6' cannot be accessed from protection domain `DOM1' in ATT_TWD
+../../test_cfg/pass4_all2.cfg:232: error: E_OACV: tskid `TASK6' cannot be accessed from protection domain `DOM1' in ATT_TWD
+../../test_cfg/pass4_all2.cfg:235: error: E_OACV: semid `SEM1' cannot be accessed from protection domain `DOM1' in ATT_TWD
+../../test_cfg/pass4_all2.cfg:236: error: E_OACV: semid `SEM1' cannot be accessed from protection domain `DOM1' in ATT_TWD
+../../test_cfg/pass4_all2.cfg:239: error: E_OACV: flgid `FLG1' cannot be accessed from protection domain `DOM1' in ATT_TWD
+../../test_cfg/pass4_all2.cfg:240: error: E_OACV: flgid `FLG1' cannot be accessed from protection domain `DOM1' in ATT_TWD
+../../test_cfg/pass4_all2.cfg:244: error: E_OACV: dtqid `DTQ1' cannot be accessed from protection domain `DOM1' in ATT_TWD
+../../test_cfg/pass4_all2.cfg:245: error: E_OACV: dtqid `DTQ1' cannot be accessed from protection domain `DOM1' in ATT_TWD
+../../test_cfg/pass4_all2.cfg:248: error: E_MACV: p_var `&nvar3' cannot be accessed from protection domain `DOM1' in ATT_TWD
+../../test_cfg/pass4_all2.cfg:249: error: E_MACV: p_var `&nvar3' cannot be accessed from protection domain `DOM1' in ATT_TWD
+../../test_cfg/pass4_all2.cfg:254: error: E_MACV: p_var `&nvar5' cannot be accessed from protection domain `DOM1' in ATT_TWD
+../../test_cfg/pass4_all2.cfg:255: error: E_MACV: p_var `&nvar5' cannot be accessed from protection domain `DOM1' in ATT_TWD
+../../test_cfg/pass4_all2.cfg:263: error: E_MACV: p_var `&nvar3' cannot be accessed from protection domain `DOM1' in ATT_TWD
+../../test_cfg/pass4_all2.cfg:264: error: E_MACV: p_var `&nvar3' cannot be accessed from protection domain `DOM1' in ATT_TWD
+../../test_cfg/pass4_all2.cfg:266: error: E_MACV: p_var `&nvar4' cannot be accessed from protection domain `DOM1' in ATT_TWD
+../../test_cfg/pass4_all2.cfg:267: error: E_MACV: p_var `&nvar4' cannot be accessed from protection domain `DOM1' in ATT_TWD
+../../test_cfg/pass4_all2.cfg:269: error: E_MACV: p_var `&nvar5' cannot be accessed from protection domain `DOM1' in ATT_TWD
+../../test_cfg/pass4_all2.cfg:270: error: E_MACV: p_var `&nvar5' cannot be accessed from protection domain `DOM1' in ATT_TWD
+../../test_cfg/pass4_all2.cfg:272: error: E_MACV: p_var `&nvar6' cannot be accessed from protection domain `DOM1' in ATT_TWD
+../../test_cfg/pass4_all2.cfg:273: error: E_MACV: p_var `&nvar6' cannot be accessed from protection domain `DOM1' in ATT_TWD
+../../test_cfg/pass4_all2.cfg:185: error: E_ID: illegal nxtsom `0' in CRE_SOM of SOM1
+../../test_cfg/pass4_all2.cfg:153: error: E_OBJ: interrupt context stack area is not included in any kernel memory object in DEF_ICS
+make: *** [kernel_mem.timestamp] Error 1

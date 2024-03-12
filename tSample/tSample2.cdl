@@ -1,0 +1,415 @@
+/*
+ *		サンプルプログラム(2)のコンポーネント記述ファイル
+ *
+ *  $Id: tSample2.cdl 869 2018-01-04 10:44:46Z ertl-hiro $
+ */
+
+/*
+ *  カーネルオブジェクトの定義
+ */
+import(<kernel.cdl>);
+
+/*
+ *  ターゲット非依存のセルタイプの定義
+ */
+import("syssvc/tSerialPort.cdl");
+import("syssvc/tSerialAdapter.cdl");
+import("syssvc/tSysLog.cdl");
+import("syssvc/tSysLogAdapter.cdl");
+import("syssvc/tLogTask.cdl");
+import("syssvc/tBanner.cdl");
+
+/*
+ *  ターゲット依存部の取り込み
+ */
+import("target.cdl");
+
+/*
+ *  サンプルプログラムのC言語ヘッダファイルの取り込み
+ */
+import_C("tSample2.h");
+
+/*
+ *		システムログ機能のアダプタの組上げ記述
+ *
+ *  システムログ機能のアダプタは，C言語で記述されたコードから，TECSベー
+ *  スのシステムログ機能を呼び出すためのセルである．システムログ機能の
+ *  サービスコール（syslog，syslog_0〜syslog_5，t_perrorを含む）を呼び
+ *  出さない場合には，以下のセルの組上げ記述を削除してよい．
+ */
+region rOutOfDomain {
+	region rProcessor1Migratable {
+		cell tSysLogAdapter SysLogAdapter {
+			cSysLog = rKernelDomain::rProcessor1Migratable::SysLog.eSysLog;
+		};
+
+		/*
+		*		シリアルインタフェースドライバのアダプタの組上げ記述
+		*
+		*  シリアルインタフェースドライバのアダプタは，C言語で記述されたコー
+		*  ドから，TECSベースのシリアルインタフェースドライバを呼び出すための
+		*  セルである．シリアルインタフェースドライバのサービスコールを呼び出
+		*  さない場合には，以下のセルの組上げ記述を削除してよい．
+		*/
+		cell tSerialAdapter SerialAdapter {
+			cSerialPort[0] = rKernelDomain::rProcessor1Migratable::SerialPort1.eSerialPort;
+		};
+	};
+};
+
+/*
+ *  これ以降のセルは，カーネルドメイン内に含める
+ */
+region rKernelDomain {
+	region rProcessor1Migratable {
+
+		/*
+		*		システムログ機能の組上げ記述
+		*
+		*  システムログ機能を外す場合には，以下のセルの組上げ記述を削除し，コ
+		*  ンパイルオプションに-DTOPPERS_OMIT_SYSLOGを追加すればよい．ただし，
+		*  システムログタスクはシステムログ機能を使用するため，それも外すこと
+		*  が必要である．また，システムログ機能のアダプタも外さなければならな
+		*  い．tecsgenが警告メッセージを出すが，無視してよい．
+		*/
+		cell tSysLog SysLog {
+			logBufferSize = 3200;					/* ログバッファのサイズ */
+			initLogMask = C_EXP("LOG_UPTO(LOG_NOTICE)");
+												/* ログバッファに記録すべき重要度 */
+			initLowMask = C_EXP("LOG_UPTO(LOG_EMERG)");
+												/* 低レベル出力すべき重要度 */
+			/* 低レベル出力との結合 */
+			cPutLog = PutLogTarget.ePutLog;
+		};
+
+		/*
+		*		シリアルインタフェースドライバの組上げ記述
+		*
+		*  シリアルインタフェースドライバを外す場合には，以下のセルの組上げ記
+		*  述を削除すればよい．ただし，システムログタスクはシリアルインタフェー
+		*  スドライバを使用するため，それも外すことが必要である．また，シリア
+		*  ルインタフェースドライバのアダプタも外さなければならない．
+		*/
+		[restrict(eSerialPort={rKernelDomain})]
+		cell tSerialPort SerialPort1 {
+			receiveBufferSize = 256;			/* 受信バッファのサイズ */
+			sendBufferSize    = 256;			/* 送信バッファのサイズ */
+
+			/* ターゲット依存部との結合 */
+			cSIOPort = SIOPortTarget1.eSIOPort;
+			eiSIOCBR <= SIOPortTarget1.ciSIOCBR;	/* コールバック */
+		};
+
+		/*
+		*		システムログタスクの組上げ記述
+		*
+		*  システムログタスクを外す場合には，以下のセルの組上げ記述を削除すれ
+		*  ばよい．
+		*/
+		cell tLogTask LogTask {
+			priority  = 3;					/* システムログタスクの優先度 */
+			stackSize = LogTaskStackSize;	/* システムログタスクのスタックサイズ */
+
+			/* シリアルインタフェースドライバとの結合 */
+			cSerialPort        = SerialPort1.eSerialPort;
+			cnSerialPortManage = SerialPort1.enSerialPortManage;
+
+			/* システムログ機能との結合 */
+			cSysLog = SysLog.eSysLog;
+
+			/* 低レベル出力との結合 */
+			cPutLog = PutLogTarget.ePutLog;
+		};
+
+		/*
+		*		カーネル起動メッセージ出力の組上げ記述
+		*
+		*  カーネル起動メッセージの出力を外す場合には，以下のセルの組上げ記述
+		*  を削除すればよい．
+		*/
+		cell tBanner Banner {
+			/* 属性の設定 */
+			targetName      = BannerTargetName;
+			copyrightNotice = BannerCopyrightNotice;
+		};
+	};
+};
+
+
+const int_t  N_SUB_TASK = 3;
+/*
+ *		サンプルプログラムのセルタイプの定義
+ */
+// [singleton]      HRMP3 版では singleton ではない
+celltype tSample2 {
+    require tKernel.eKernel;			/* 呼び口名なし（例：delay）*/
+    /*require cKernel = tKernel.eKernel;/* 呼び口名あり（例：cKernel_delay）*/
+    require ciKernel = tKernel.eiKernel;/* 呼び口名あり（例：ciKernel_）*/
+
+    call sTask		    cTask[1+N_SUB_TASK];	/* タスク操作 */
+    call sTask 			cExceptionTask;
+    call sCyclic        cCyclic;
+    call sAlarm         cAlarm;
+
+    call sSerialPort	cSerialPort;	/* シリアルドライバとの接続 */
+    call sSysLog		cSysLog;		/* システムログ機能との接続 */
+	
+    entry sTaskBody		eMainTask;	  	/* Mainタスク */
+    entry sTaskBody		eSampleTask[N_SUB_TASK];	/* 並行実行されるタスク */
+    entry sTaskBody		eExceptionTask;	/* 例外処理タスク */
+	
+    entry siHandlerBody eiCyclicHandler;	/* 周期ハンドラ*/
+    entry siHandlerBody eiAlarmHandler;		/* アラームハンドラ */
+
+    entry siHandlerBody	eiISR;				/* 割込みサービスルーチン */
+
+    entry siCpuExceptionHandlerBody	eiCpuExceptionHandler;
+    /* CPU例外ハンドラ */
+
+    attr {
+        int  sampleNo;     /* 1 or 2, 1: run on PRC1, 2: run on PRC2*/
+        [size_is(N_SUB_TASK)]
+            char **taskName;
+        [size_is(N_SUB_TASK)]
+           char **taskGraph;
+    };
+};
+
+/*
+ *		組み上げ記述
+ */
+[domain(HRMP,"user")]
+region rUserDomain1 {
+  [class(HRMP,"CLS_ALL_PRC1")]
+  region rProcessor1Migratable{
+
+    cell tTask Task1 {
+        /* 呼び口の結合 */
+        cTaskBody = rOutOfDomain::rProcessor1Migratable::Sample2.eSampleTask[0];
+        /* 属性の設定 */
+        priority = C_EXP("MID_PRIORITY");
+        stackSize = C_EXP("STACK_SIZE");
+    };
+
+    cell tTask Task2 {
+        /* 呼び口の結合 */
+        cTaskBody = rOutOfDomain::rProcessor1Migratable::Sample2.eSampleTask[1];
+        /* 属性の設定 */
+        priority = C_EXP("MID_PRIORITY");
+        stackSize = C_EXP("STACK_SIZE");
+    };
+  };
+  [class(HRMP,"CLS_ALL_PRC2")]
+  region rProcessor2Symmetric{
+
+    cell tTask Task2_1 {
+        /* 呼び口の結合 */
+        cTaskBody = rOutOfDomain::rProcessor2Symmetric::Sample2_2.eSampleTask[0];
+        /* 属性の設定 */
+        priority = C_EXP("MID_PRIORITY");
+        stackSize = C_EXP("STACK_SIZE");
+    };
+
+    cell tTask Task2_2 {
+        /* 呼び口の結合 */
+        cTaskBody = rOutOfDomain::rProcessor2Symmetric::Sample2_2.eSampleTask[1];
+        /* 属性の設定 */
+        priority = C_EXP("MID_PRIORITY");
+        stackSize = C_EXP("STACK_SIZE");
+    };
+  };
+};
+
+[domain(HRMP,"user")]
+region rUserDomain2 {
+  [class(HRMP,"CLS_ALL_PRC2")]
+  region rProcessor2Symmetric{
+    cell tTask Task3 {
+        /* 呼び口の結合 */
+        cTaskBody = rOutOfDomain::rProcessor1Migratable::Sample2.eSampleTask[2];
+        /* 属性の設定 */
+        // attribute = C_EXP("TA_ACT");
+        priority = C_EXP("MID_PRIORITY");
+        stackSize = C_EXP("STACK_SIZE");
+    };
+  };
+
+  [class(HRMP,"CLS_ALL_PRC1")]
+  region rProcessor1Migratable{
+    cell tTask Task2_3 {
+        /* 呼び口の結合 */
+        cTaskBody = rOutOfDomain::rProcessor2Symmetric::Sample2_2.eSampleTask[2];
+        /* 属性の設定 */
+        // attribute = C_EXP("TA_ACT");
+        priority = C_EXP("MID_PRIORITY");
+        stackSize = C_EXP("STACK_SIZE");
+    };
+  };
+};
+
+region rKernelDomain {
+  // [class(HRMP,"CLS_ALL_PRC1")]   ...  kernel.cdl で定義済み
+  region rProcessor1Migratable {
+
+    cell tTask MainTask {
+        /* 呼び口の結合 */
+        cTaskBody = rOutOfDomain::rProcessor1Migratable::Sample2.eMainTask;
+        /* 属性の設定 */
+        attribute = C_EXP("TA_ACT");
+        priority = C_EXP("MAIN_PRIORITY");
+        stackSize = C_EXP("STACK_SIZE");
+    };
+
+    cell tTask ExceptionTask {
+        /* 呼び口の結合 */
+        cTaskBody = rOutOfDomain::rProcessor1Migratable::Sample2.eExceptionTask;
+        /* 属性の設定 */
+        priority = C_EXP("EXC_PRIORITY");
+        stackSize = C_EXP("STACK_SIZE");
+    };
+
+    cell tCyclicHandler CyclicHandler {
+        /* 呼び口の結合 */
+        ciHandlerBody = rOutOfDomain::rProcessor1Migratable::Sample2.eiCyclicHandler;
+        /* 属性の設定 */
+        cycleTime = 2000000;
+    };
+
+    cell tAlarmHandler AlarmHandler {
+        /* 呼び口の結合 */
+        ciHandlerBody = rOutOfDomain::rProcessor1Migratable::Sample2.eiAlarmHandler;
+    };
+
+    cell tInterruptRequest InterruptRequest {
+        /* 属性の設定 */
+        interruptNumber = C_EXP("INTNO1");
+        attribute = C_EXP("INTNO1_INTATR");
+        interruptPriority = C_EXP("INTNO1_INTPRI");
+    };
+
+    cell tISR InterruptServiceRoutine {
+        /* 呼び口の結合 */
+        ciISRBody = rOutOfDomain::rProcessor1Migratable::Sample2.eiISR;
+        /* 属性の設定 */
+        attribute = C_EXP("TA_NULL");
+        interruptNumber = C_EXP("INTNO1");
+    };
+
+    cell tCpuExceptionHandler CpuExceptionHandler {
+        /* 呼び口の結合 */
+        ciCpuExceptionHandlerBody = rOutOfDomain::rProcessor1Migratable::Sample2.eiCpuExceptionHandler;
+        /* 属性の設定 */
+        cpuExceptionHandlerNumber = C_EXP("CPUEXC1_PRC1");
+    };
+  };
+
+  [class(HRMP,"CLS_ALL_PRC2")]
+  region rProcessor2Symmetric {
+
+    cell tTask MainTask2 {
+        /* 呼び口の結合 */
+        cTaskBody = rOutOfDomain::rProcessor2Symmetric::Sample2_2.eMainTask;
+        /* 属性の設定 */
+        attribute = C_EXP("TA_ACT");
+        priority = C_EXP("MAIN_PRIORITY");
+        stackSize = C_EXP("STACK_SIZE");
+    };
+
+    cell tTask ExceptionTask2 {
+        /* 呼び口の結合 */
+        cTaskBody = rOutOfDomain::rProcessor2Symmetric::Sample2_2.eExceptionTask;
+        /* 属性の設定 */
+        priority = C_EXP("EXC_PRIORITY");
+        stackSize = C_EXP("STACK_SIZE");
+    };
+
+    cell tCyclicHandler CyclicHandler2 {
+        /* 呼び口の結合 */
+        ciHandlerBody = rOutOfDomain::rProcessor2Symmetric::Sample2_2.eiCyclicHandler;
+        /* 属性の設定 */
+        cycleTime = 2000000;
+    };
+
+    cell tAlarmHandler AlarmHandler2 {
+        /* 呼び口の結合 */
+        ciHandlerBody = rOutOfDomain::rProcessor2Symmetric::Sample2_2.eiAlarmHandler;
+    };
+
+    cell tInterruptRequest InterruptRequest2 {
+        /* 属性の設定 */
+        interruptNumber = C_EXP("INTNO2");
+        attribute = C_EXP("INTNO2_INTATR");
+        interruptPriority = C_EXP("INTNO2_INTPRI");
+    };
+
+    cell tISR InterruptServiceRoutine2 {
+        /* 呼び口の結合 */
+        ciISRBody = rOutOfDomain::rProcessor2Symmetric::Sample2_2.eiISR;
+        /* 属性の設定 */
+        attribute = C_EXP("TA_NULL");
+        interruptNumber = C_EXP("INTNO2");
+    };
+
+    cell tCpuExceptionHandler CpuExceptionHandler2 {
+        /* 呼び口の結合 */
+        ciCpuExceptionHandlerBody = rOutOfDomain::rProcessor2Symmetric::Sample2_2.eiCpuExceptionHandler;
+        /* 属性の設定 */
+        cpuExceptionHandlerNumber = C_EXP("CPUEXC1_PRC2");
+    };
+  };
+};
+
+region rOutOfDomain {
+    // [class(HRMP,"CLS_PRC1", global)]   ...  kernel.cdl で定義済み
+	region rProcessor1Migratable {
+        cell tSample2 Sample2 {
+            /* 呼び口の結合 */
+            cTask[0] = rKernelDomain::rProcessor2Symmetric::MainTask2.eTask;
+            cTask[1] = rUserDomain1::rProcessor1Migratable::Task1.eTask;
+            cTask[2] = rUserDomain1::rProcessor1Migratable::Task2.eTask;
+            cTask[3] = rUserDomain2::rProcessor2Symmetric::Task3.eTask;
+
+            cExceptionTask = rKernelDomain::rProcessor1Migratable::ExceptionTask.eTask;
+
+            cCyclic = rKernelDomain::rProcessor1Migratable::CyclicHandler.eCyclic;
+            cAlarm  = rKernelDomain::rProcessor1Migratable::AlarmHandler.eAlarm;
+
+            cSerialPort = rKernelDomain::rProcessor1Migratable::SerialPort1.eSerialPort;
+            cSysLog     = rKernelDomain::rProcessor1Migratable::SysLog.eSysLog;
+
+            sampleNo = 1;
+            taskName = { "TASK1_1", "TASK1_2", "TASK1_3" };
+            taskGraph = {   " @   |   ||     |",
+							"   + |   ||     |",
+							"     | * ||     |"  };
+        };
+    };
+
+    [class(HRMP,"CLS_ALL_PRC2")]
+    region rProcessor2Symmetric {
+        cell tSample2 Sample2_2 {
+            /* 呼び口の結合 */
+            cTask[0] = rKernelDomain::rProcessor1Migratable::MainTask.eTask;
+            cTask[1] = rUserDomain1::rProcessor2Symmetric::Task2_1.eTask;
+            cTask[2] = rUserDomain1::rProcessor2Symmetric::Task2_2.eTask;
+            cTask[3] = rUserDomain2::rProcessor1Migratable::Task2_3.eTask;
+
+            cExceptionTask = rKernelDomain::rProcessor2Symmetric::ExceptionTask2.eTask;
+
+            cCyclic = rKernelDomain::rProcessor2Symmetric::CyclicHandler2.eCyclic;
+            cAlarm  = rKernelDomain::rProcessor2Symmetric::AlarmHandler2.eAlarm;
+
+            cSerialPort = rKernelDomain::rProcessor1Migratable::SerialPort1.eSerialPort;
+            cSysLog     = rKernelDomain::rProcessor1Migratable::SysLog.eSysLog;
+
+            sampleNo = 2;
+            taskName = { "TASK2_1", "TASK2_2", "TASK2_3" };
+            taskGraph = {   "     |   || %   |",
+							"     |   ||   # |",
+							"     |   ||     | &" };
+        };
+    };
+};
+
+cell tKernel HRMPKernel {
+};

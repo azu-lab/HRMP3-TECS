@@ -1,0 +1,11 @@
+16:33:56 **** Incremental Build of configuration Default for project sample1 ****
+make all 
+ruby ../../../../cfg/cfg.rb --pass 1 --kernel hrmp -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc --api-table ../../../../kernel/kernel_api.def --symval-table ../../../../kernel/kernel_sym.def  --symval-table ../../../../arch/arm_gcc/common/core_sym.def \
+					-M objs/cfg1_out_c.d ../../../../target/zybo_z7_gcc/target_kernel.cfg ../../../../sample/sample1.cfg
+process_begin: CreateProcess(NULL, ruby ../../../../cfg/cfg.rb --pass 1 --kernel hrmp -I. -I../../../../include -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc --api-table ../../../../kernel/kernel_api.def --symval-table ../../../../kernel/kernel_sym.def --symval-table ../../../../arch/arm_gcc/common/core_sym.def -M objs/cfg1_out_c.d ../../../../target/zybo_z7_gcc/target_kernel.cfg ../../../../sample/sample1.cfg, ...) failed.
+make (e=2): 指定されたファイルが見つかりません。
+
+make: *** [Makefile:434: cfg1_out.timestamp] Error 2
+
+16:33:57 Build Finished (took 516ms)
+

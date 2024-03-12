@@ -1,0 +1,71 @@
+/*
+ *  時間パーティショニング設定のためのCDLファイル
+ */
+ import_C("t_stddef.h");
+
+signature sSOM{
+	void	main( void );
+};
+
+signature sTimeWindow{
+	void	main( void );
+};
+
+
+[active, singleton, generate(TimeWindowPlugin, "SCY")]
+celltype tScycTime{
+	call	sSOM	cSOM;
+
+	attr{
+		[omit]	RELTIM	scyc_time;
+	};
+};
+
+[active, generate(TimeWindowPlugin, "SOM")]
+celltype tSOM{
+	entry	sSOM	eSOM;
+	call	sTimeWindow	cTimeWindow;
+
+	attr{
+		[omit] 	ID	somid;
+		[omit]	ATR	somatr;
+		[omit]	ID	next_somid;
+	};
+};
+
+[generate(TimeWindowPlugin, "TWD")]
+celltype tTimeWindow{
+	entry	sTimeWindow	eTimeWindow;
+
+	attr{
+		[omit]	ID 	domain_id;
+		[omit]	ID 	somid;
+		[omit]	int_t 	twd_order;
+		[omit]	PRCTIM	twd_length;
+	};
+};
+
+cell tScycTime ScycTime{
+	cSOM = SOM1.eSOM;
+
+	scyc_time = 20000;
+};
+
+cell tSOM SOM1{
+	cTimeWindow = rProcessor1Migratable::TimeWindow1.eTimeWindow;
+
+	somid = C_EXP("SOM1");
+	somatr = C_EXP("TA_NULL");
+	next_somid = C_EXP("SOM1");
+};
+
+import("target_class.cdf");
+[class(HRMP, "CLS_ALL_PRC1")]
+region rProcessor1Migratable{
+	cell tTimeWindow TimeWindow1{
+		domain_id = C_EXP("DOM1");
+		somid = C_EXP("SOM1");
+		twd_order = 1;
+		twd_length = 4000;
+	};
+};

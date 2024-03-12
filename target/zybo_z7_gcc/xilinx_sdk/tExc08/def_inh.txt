@@ -1,0 +1,1 @@
+{:inhno=>#<NumStr:0x00000008006880a0 @val=65618, @str="65618">, :inhatr=>#<NumStr:0x0000000800688028 @val=0, @str="TA_NULL">, :inthdr=>"_kernel_inthdr_82", :domain=>-1, :class=>#<NumStr:0x00000008005edbb8 @val=3, @str="CLS_PRC1">}

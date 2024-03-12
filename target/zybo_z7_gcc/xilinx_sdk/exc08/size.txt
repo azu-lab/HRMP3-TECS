@@ -1,0 +1,5 @@
+   text	   data	    bss	    dec	    hex	filename
+  10300	    320	     12	  10632	   2988	cfg1_out.elf
+ 176360	     48	  86456	 262864	  402d0	cfg2_out.elf
+ 176360	     48	  86456	 262864	  402d0	cfg3_out.elf
+ 176360	     48	  86456	 262864	  402d0	hrmp.elf

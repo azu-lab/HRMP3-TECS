@@ -1,0 +1,4 @@
+../../test_cfg/pass2_cfg1.cfg:15: error: E_OBJ: inhno `(0x00010000U | 8U)' is duplicated in DEF_INH
+../../test_cfg/pass2_cfg1.cfg:19: error: E_OBJ: intno `(0x00010000U | 8U)' is duplicated in CFG_INT
+../../test_cfg/pass2_cfg1.cfg:24: error: E_OBJ: excno `(0x00010000U | 1U)' is duplicated in DEF_EXC
+make: *** [kernel_cfg.timestamp] Error 1

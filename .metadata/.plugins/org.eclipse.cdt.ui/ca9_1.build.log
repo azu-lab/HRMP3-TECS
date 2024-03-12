@@ -1,0 +1,7 @@
+16:33:57 **** Incremental Build of configuration Default for project ca9_1 ****
+make all 
+cmd.exe /C copy ..\sample1\hrmp.elf .
+        1 個のファイルをコピーしました。
+
+16:34:02 Build Finished (took 5s.190ms)
+

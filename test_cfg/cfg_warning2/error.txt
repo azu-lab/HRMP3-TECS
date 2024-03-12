@@ -1,0 +1,4 @@
+../../test_cfg/cfg_warning2.cfg:34: warning: class is ignored for ACV_DOM
+../../test_cfg/cfg_warning2.cfg:41: warning: class is ignored for ACV_DOM
+../../test_cfg/cfg_warning2.cfg:47: warning: class is ignored for ACV_DOM
+../../test_cfg/cfg_warning2.cfg:31: warning: class is ignored for SAC_SYS

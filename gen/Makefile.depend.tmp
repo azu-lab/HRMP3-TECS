@@ -1,0 +1,15 @@
+# Celltype: tScycTime  #_MDEP_#
+$(_TECS_OBJ_DIR)tScycTime_tecsgen.o : tScycTime_tecsgen.c  $(GEN_DIR)/tSOM_tecsgen.h  $(GEN_DIR)/tTimeWindow_tecsgen.h $(GEN_DIR)/global_tecsgen.h $(GEN_DIR)/sSOM_tecsgen.h $(GEN_DIR)/tScycTime_factory.h $(GEN_DIR)/tScycTime_tecsgen.h
+$(_TECS_OBJ_DIR)tScycTime_templ.o : tScycTime_templ.c  $(GEN_DIR)/tSOM_tecsgen.h  $(GEN_DIR)/tTimeWindow_tecsgen.h $(GEN_DIR)/global_tecsgen.h $(GEN_DIR)/sSOM_tecsgen.h $(GEN_DIR)/tScycTime_factory.h $(GEN_DIR)/tScycTime_tecsgen.h
+$(_TECS_OBJ_DIR)tScycTime.o : tScycTime.c  $(GEN_DIR)/tSOM_tecsgen.h  $(GEN_DIR)/tTimeWindow_tecsgen.h $(GEN_DIR)/global_tecsgen.h $(GEN_DIR)/sSOM_tecsgen.h $(GEN_DIR)/tScycTime_factory.h $(GEN_DIR)/tScycTime_tecsgen.h
+
+# Celltype: tSOM  #_MDEP_#
+$(_TECS_OBJ_DIR)tSOM_tecsgen.o : tSOM_tecsgen.c  $(GEN_DIR)/tTimeWindow_tecsgen.h $(GEN_DIR)/global_tecsgen.h $(GEN_DIR)/sSOM_tecsgen.h $(GEN_DIR)/sTimeWindow_tecsgen.h $(GEN_DIR)/tSOM_factory.h $(GEN_DIR)/tSOM_tecsgen.h
+$(_TECS_OBJ_DIR)tSOM_templ.o : tSOM_templ.c  $(GEN_DIR)/tTimeWindow_tecsgen.h $(GEN_DIR)/global_tecsgen.h $(GEN_DIR)/sSOM_tecsgen.h $(GEN_DIR)/sTimeWindow_tecsgen.h $(GEN_DIR)/tSOM_factory.h $(GEN_DIR)/tSOM_tecsgen.h
+$(_TECS_OBJ_DIR)tSOM.o : tSOM.c  $(GEN_DIR)/tTimeWindow_tecsgen.h $(GEN_DIR)/global_tecsgen.h $(GEN_DIR)/sSOM_tecsgen.h $(GEN_DIR)/sTimeWindow_tecsgen.h $(GEN_DIR)/tSOM_factory.h $(GEN_DIR)/tSOM_tecsgen.h
+
+# Celltype: tTimeWindow  #_MDEP_#
+$(_TECS_OBJ_DIR)tTimeWindow_tecsgen.o : tTimeWindow_tecsgen.c $(GEN_DIR)/global_tecsgen.h $(GEN_DIR)/sTimeWindow_tecsgen.h $(GEN_DIR)/tTimeWindow_factory.h $(GEN_DIR)/tTimeWindow_tecsgen.h
+$(_TECS_OBJ_DIR)tTimeWindow_templ.o : tTimeWindow_templ.c $(GEN_DIR)/global_tecsgen.h $(GEN_DIR)/sTimeWindow_tecsgen.h $(GEN_DIR)/tTimeWindow_factory.h $(GEN_DIR)/tTimeWindow_tecsgen.h
+$(_TECS_OBJ_DIR)tTimeWindow.o : tTimeWindow.c $(GEN_DIR)/global_tecsgen.h $(GEN_DIR)/sTimeWindow_tecsgen.h $(GEN_DIR)/tTimeWindow_factory.h $(GEN_DIR)/tTimeWindow_tecsgen.h
+

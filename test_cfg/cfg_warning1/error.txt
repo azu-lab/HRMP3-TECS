@@ -1,0 +1,5 @@
+../../test_cfg/cfg_warning1.cfg:26: warning: CRE_SOM is ignored
+../../test_cfg/cfg_warning1.cfg:29: warning: ATT_TWD is ignored
+../../test_cfg/cfg_warning1.cfg:36: warning: ceilpri `MID_PRIORITY' is ignored in CRE_MTX of MTX1
+../../test_cfg/cfg_warning1.cfg:37: warning: ceilpri `MID_PRIORITY' is ignored in CRE_MTX of MTX2
+warning: section `.data_shared' with TA_MEMINI attribute is not initialized

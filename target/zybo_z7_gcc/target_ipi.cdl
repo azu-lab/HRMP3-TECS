@@ -1,0 +1,4 @@
+/* target_ipi.cdl */
+
+import("tIPI.cdl");
+

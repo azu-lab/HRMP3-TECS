@@ -1,0 +1,6 @@
+10:06:47 **** Incremental Build of configuration Default for project exc08 ****
+make all 
+make: Nothing to be done for 'all'.
+
+10:06:48 Build Finished (took 595ms)
+

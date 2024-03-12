@@ -1,0 +1,221 @@
+/*
+ * コア間割込みについてのCDL記述
+ */
+import_C("kernel_impl.h");
+import_C("pcb.h");
+
+/*
+ * IPI送信
+ */
+
+signature sDispatch{
+	void dispatchPrc(void);
+};
+
+signature sExitKernel{
+	void extKernel(void);
+};
+
+signature sHrtEvent{
+	void setHrtEvent(void);
+};
+
+signature sScyc{
+	void startScycEvent(void);
+};
+
+/* IPI受信 */
+signature sIPIReceive{
+	void receive(void);
+};
+
+/* コア間割込みの確認用メインセルタイプ */
+[active]
+celltype tIPIMain{
+	call	sDispatch	cDispatch;
+	call	sExitKernel	cExitKernel;
+	call	sHrtEvent	cHrtEvent;
+	call	sScyc	cScyc;
+};
+
+/* ディスパッチ */
+[generate(IPIPlugin, "DSP")]
+celltype tDispatch{
+	entry	sDispatch	eDispatch;
+
+	attr{
+		/* CFG_INT用パラメータ */
+		[omit] INTNO intno;
+		[omit] ATR intatr;
+		[omit] PRI intpri;
+
+		/* DEF_INH用パラメータ */
+		[omit] INHNO inhno;
+		[omit] ATR inhatr;
+		[omit] INTHDR inthdr;
+	};
+};
+
+/* カーネル終了ハンドラ */
+[generate(IPIPlugin, "EXT")]
+celltype tExitKernel{
+	entry	sExitKernel	eExitKernel;
+
+	attr{
+		/* CFG_INT用パラメータ */
+		[omit] INTNO intno;
+		[omit] ATR intatr;
+		[omit] PRI intpri;
+
+		/* DEF_INH用パラメータ */
+		[omit] INHNO inhno;
+		[omit] ATR inhatr;
+		[omit] INTHDR inthdr;
+	};
+};
+
+/* 高分解能タイマ設定ハンドラ */
+[generate(IPIPlugin, "HRT")]
+celltype tHrtEvent{
+	entry	sHrtEvent	eHrtEvent;
+
+	attr{
+		/* CFG_INT用パラメータ */
+		[omit] INTNO intno;
+		[omit] ATR intatr;
+		[omit] PRI intpri;
+
+		/* DEF_INH用パラメータ */
+		[omit] INHNO inhno;
+		[omit] ATR inhatr;
+		[omit] INTHDR inthdr;
+	};
+};
+
+/* システム周期開始ハンドラ */
+[generate(IPIPlugin, "SCYC")]
+celltype tScyc{
+	entry	sScyc	eScyc;
+
+	attr{
+		/* CFG_INT用パラメータ */
+		[omit] INTNO intno;
+		[omit] ATR intatr;
+		[omit] PRI intpri;
+
+		/* DEF_INH用パラメータ */
+		[omit] INHNO inhno;
+		[omit] ATR inhatr;
+		[omit] INTHDR inthdr;
+	};
+};
+
+/* コア間割込み受ける */
+celltype tIPIReceive{
+	entry	sIPIReceive eIPICallback;
+};
+
+import("target_class.cdf");
+
+[domain(HRMP, "kernel")]
+region rKernelDomain{
+	[class(HRMP, "CLS_ALL_PRC1")]
+	region rProcessor1Only{
+		cell tIPIMain IPIMain1{
+			cDispatch = Dispatch1.eDispatch;
+			cExitKernel = ExitKernel1.eExitKernel;
+			cHrtEvent = HrtEvent1.eHrtEvent;
+			cScyc = Scyc1.eScyc;
+		};
+
+		cell tDispatch Dispatch1{
+			intno = C_EXP("INTNO_IPI_DISPATCH_PRC1");
+			intatr = C_EXP("TA_ENAINT");
+			intpri = C_EXP("INTPRI_IPI_DISPATCH_PRC1");
+
+			inhno = C_EXP("INHNO_IPI_DISPATCH_PRC1");
+			inhatr = C_EXP("TA_NULL");
+			inthdr = C_EXP("_kernel_dispatch_handler");
+		};
+
+		cell tExitKernel ExitKernel1{
+			intno = C_EXP("INTNO_IPI_EXT_KER_PRC1");
+			intatr = C_EXP("TA_ENAINT");
+			intpri = C_EXP("INTPRI_IPI_EXT_KER_PRC1");
+
+			inhno = C_EXP("INHNO_IPI_DISPATCH_PRC1");
+			inhatr = C_EXP("TA_NULL");
+			inthdr = C_EXP("_kernel_dispatch_handler");
+		};
+
+		cell tHrtEvent HrtEvent1{
+			intno = C_EXP("INTNO_IPI_SET_HRT_EVT_PRC1");
+			intatr = C_EXP("TA_ENAINT");
+			intpri = C_EXP("INTPRI_IPI_SET_HRT_EVT_PRC1");
+
+			inhno = C_EXP("INHNO_IPI_SET_HRT_EVT_PRC1");
+			inhatr = C_EXP("TA_NULL");
+			inthdr = C_EXP("_kernel_set_hrt_event_handler");
+		};
+
+		cell tScyc Scyc1{
+			intno = C_EXP("INTNO_IPI_START_SCYC_PRC1");
+			intatr = C_EXP("TA_ENAINT");
+			intpri = C_EXP("INTPRI_IPI_START_SCYC_PRC1");
+
+			inhno = C_EXP("INHNO_IPI_START_SCYC_PRC1");
+			inhatr = C_EXP("TA_NULL");
+			inthdr = C_EXP("_kernel_start_scyc_handler");
+		};
+	};
+
+	[class(HRMP, "CLS_PRC2")]
+	region rProcessor2Only{
+		cell tIPIMain IPIMain2{
+			cDispatch = Dispatch2.eDispatch;
+			cExitKernel = ExitKernel2.eExitKernel;
+			cHrtEvent = HrtEvent2.eHrtEvent;
+			cScyc = Scyc2.eScyc;
+		};
+
+		cell tDispatch Dispatch2{
+			intno = C_EXP("INTNO_IPI_DISPATCH_PRC2");
+			intatr = C_EXP("TA_ENAINT");
+			intpri = C_EXP("INTPRI_IPI_DISPATCH_PRC2");
+
+			inhno = C_EXP("INHNO_IPI_DISPATCH_PRC2");
+			inhatr = C_EXP("TA_NULL");
+			inthdr = C_EXP("_kernel_dispatch_handler");
+		};
+
+		cell tExitKernel ExitKernel2{
+			intno = C_EXP("INTNO_IPI_EXT_KER_PRC2");
+			intatr = C_EXP("TA_ENAINT");
+			intpri = C_EXP("INTPRI_IPI_EXT_KER_PRC2");
+
+			inhno = C_EXP("INHNO_IPI_DISPATCH_PRC2");
+			inhatr = C_EXP("TA_NULL");
+			inthdr = C_EXP("_kernel_dispatch_handler");
+		};
+
+		cell tHrtEvent HrtEvent2{
+			intno = C_EXP("INTNO_IPI_SET_HRT_EVT_PRC2");
+			intatr = C_EXP("TA_ENAINT");
+			intpri = C_EXP("INTPRI_IPI_SET_HRT_EVT_PRC2");
+
+			inhno = C_EXP("INHNO_IPI_SET_HRT_EVT_PRC2");
+			inhatr = C_EXP("TA_NULL");
+			inthdr = C_EXP("_kernel_set_hrt_event_handler");
+		};
+
+		cell tScyc Scyc2{
+			intno = C_EXP("INTNO_IPI_START_SCYC_PRC2");
+			intatr = C_EXP("TA_ENAINT");
+			intpri = C_EXP("INTPRI_IPI_START_SCYC_PRC2");
+
+			inhno = C_EXP("INHNO_IPI_START_SCYC_PRC2");
+			inhatr = C_EXP("TA_NULL");
+			inthdr = C_EXP("_kernel_start_scyc_handler");
+		};
+	};
+};
