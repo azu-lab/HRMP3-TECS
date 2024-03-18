@@ -62,9 +62,23 @@
  *   bool_t         ciKernel_senseKernel( );
  *   ER             ciKernel_exitKernel( );
  *   bool_t         ciKernel_exceptionSenseDispatchPendingState( const void* p_exceptionInformation );
- * call port: cData signature: sData context:task
- *   void           cData_main( subscript );
- *       subscript:  0...(NCP_cData-1)
+ * call port: cTask signature: sTask context:task
+ *   ER             cTask_activate( subscript );
+ *   ER_UINT        cTask_cancelActivate( subscript );
+ *   ER             cTask_getTaskState( subscript, STAT* p_tskstat );
+ *   ER             cTask_changePriority( subscript, PRI priority );
+ *   ER             cTask_getPriority( subscript, PRI* p_priority );
+ *   ER             cTask_refer( subscript, T_RTSK* pk_taskStatus );
+ *   ER             cTask_wakeup( subscript );
+ *   ER_UINT        cTask_cancelWakeup( subscript );
+ *   ER             cTask_releaseWait( subscript );
+ *   ER             cTask_suspend( subscript );
+ *   ER             cTask_resume( subscript );
+ *   ER             cTask_raiseTerminate( subscript );
+ *   ER             cTask_terminate( subscript );
+ *   ER             cTask_migrateAndActivate( subscript, ID prcid );
+ *   ER             cTask_migrate( subscript, ID prcid );
+ *       subscript:  0...(NCP_cTask-1)
  * call port: cSerialPort signature: sSerialPort context:task
  *   ER             cSerialPort_open( );
  *   ER             cSerialPort_close( );
@@ -88,7 +102,6 @@
 #include <t_stdlib.h>
 #include "kernel_cfg.h"
 #include "tTestSample.h"
-// #include "tDataBody.c"
 
 #ifndef E_OK
 #define	E_OK	0		/* success */
@@ -107,13 +120,15 @@ svc_perror(const char *file, int_t line, const char *expr, ER ercd)
 }
 #define SVC_PERROR(expr)    svc_perror(__FILE__, __LINE__, #expr, (expr))
 
+// #define count 44642000
+
 void busy_wait_ms(int_t ms){
     volatile int_t i, j;
-    
+
     for (i = 0; i < ms; ++i)
     {
         // for (j = 0; j < count; ++j)
-        for (j = 0; j < 7442000; ++j)
+        for (j = 0; j < 7742000; ++j)
         {
             /* countを1msになるように */
         }
@@ -135,7 +150,7 @@ void busy_wait_ms(int_t ms){
 void
 eMainTask_main(CELLIDX idx)
 {
-	CELLCB  *p_cellcb;
+    CELLCB  *p_cellcb;
     if (VALID_IDX(idx)) {
         p_cellcb = GET_CELLCB(idx);
     }
@@ -173,30 +188,135 @@ eMainTask_main(CELLIDX idx)
     }
     SVC_PERROR(cSerialPort_control(IOCTL_CRLF | IOCTL_FCSND | IOCTL_FCRCV));
     
-    for(int_t i = 0; i<10; i++){
-    	get_tim(&start);
-        cDataBody_main(1);
-    	cDataBody_main(2);
-        get_tim(&fin);
-        time1 = fin - start - overhead;
-        syslog(LOG_INFO,"%d",time1);
-        // busy_wait_ms(12);
-        dly_tsk(100000);
-    }
     
     // SVC_PERROR(get_tim(&start));
+    SVC_PERROR(cTask_activate(1));
+    SVC_PERROR(cTask_activate(2));
+    SVC_PERROR(cTask_activate(3));
+    SVC_PERROR(cTask_activate(4));
     // SVC_PERROR(get_tim(&fin));
     // time1 = fin - start - overhead;
     // syslog(LOG_INFO,"%d",time1);
 
-    // while (1) {
-    //     // 何もしない
-    // }
+    /*while (1) {
+        // 何もしない
+    }*/
 
     syslog(LOG_NOTICE, "Test program ends.");
     SVC_PERROR(ciKernel_exitKernel());
     assert(0);
+}
 
+/* #[<ENTRY_PORT>]# eMotor1
+ * entry port: eMotor1
+ * signature:  sTaskBody
+ * context:    task
+ * #[</ENTRY_PORT>]# */
+
+/* #[<ENTRY_FUNC>]# eMotor1_main
+ * name:         eMotor1_main
+ * global_name:  tTestSample_eMotor1_main
+ * oneway:       false
+ * #[</ENTRY_FUNC>]# */
+void
+eMotor1_main(CELLIDX idx)
+{
+    CELLCB  *p_cellcb;
+    if (VALID_IDX(idx)) {
+        p_cellcb = GET_CELLCB(idx);
+    }
+    else {
+        /* Write error processing code here */
+    } /* end if VALID_IDX(idx) */
+
+    // while (1) {
+    //     busy_wait_ms(1); // 1ms待機
+    //     syslog(LOG_NOTICE, "Real-time task is running on core 1");
+    // }
+}
+
+/* #[<ENTRY_PORT>]# eMotor2
+ * entry port: eMotor2
+ * signature:  sTaskBody
+ * context:    task
+ * #[</ENTRY_PORT>]# */
+
+/* #[<ENTRY_FUNC>]# eMotor2_main
+ * name:         eMotor2_main
+ * global_name:  tTestSample_eMotor2_main
+ * oneway:       false
+ * #[</ENTRY_FUNC>]# */
+void
+eMotor2_main(CELLIDX idx)
+{
+    CELLCB  *p_cellcb;
+    if (VALID_IDX(idx)) {
+        p_cellcb = GET_CELLCB(idx);
+    }
+    else {
+        /* Write error processing code here */
+    } /* end if VALID_IDX(idx) */
+
+    // while (1) {
+    //     busy_wait_ms(1); // 1ms待機
+    //     syslog(LOG_NOTICE, "Real-time task is running on core 1");
+    // }
+}
+
+/* #[<ENTRY_PORT>]# eDataAcqu1
+ * entry port: eDataAcqu1
+ * signature:  sTaskBody
+ * context:    task
+ * #[</ENTRY_PORT>]# */
+
+/* #[<ENTRY_FUNC>]# eDataAcqu1_main
+ * name:         eDataAcqu1_main
+ * global_name:  tTestSample_eDataAcqu1_main
+ * oneway:       false
+ * #[</ENTRY_FUNC>]# */
+void
+eDataAcqu1_main(CELLIDX idx)
+{
+    CELLCB  *p_cellcb;
+    if (VALID_IDX(idx)) {
+        p_cellcb = GET_CELLCB(idx);
+    }
+    else {
+        /* Write error processing code here */
+    } /* end if VALID_IDX(idx) */
+
+    // while (1) {
+    //     busy_wait_ms(5); // 4ms待機
+    //     syslog(LOG_NOTICE, "Non-real-time task is running on core 2");
+    // }
+}
+
+/* #[<ENTRY_PORT>]# eDataAcqu2
+ * entry port: eDataAcqu2
+ * signature:  sTaskBody
+ * context:    task
+ * #[</ENTRY_PORT>]# */
+
+/* #[<ENTRY_FUNC>]# eDataAcqu2_main
+ * name:         eDataAcqu2_main
+ * global_name:  tTestSample_eDataAcqu2_main
+ * oneway:       false
+ * #[</ENTRY_FUNC>]# */
+void
+eDataAcqu2_main(CELLIDX idx)
+{
+    CELLCB  *p_cellcb;
+    if (VALID_IDX(idx)) {
+        p_cellcb = GET_CELLCB(idx);
+    }
+    else {
+        /* Write error processing code here */
+    } /* end if VALID_IDX(idx) */
+    
+    // while (1) {
+    //     busy_wait_ms(5); // 4ms待機
+    //     syslog(LOG_NOTICE, "Non-real-time task is running on core 2");
+    // }
 }
 
 /* #[<POSTAMBLE>]#

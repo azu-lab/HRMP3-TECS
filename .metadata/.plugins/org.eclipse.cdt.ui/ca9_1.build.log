@@ -1,7 +1,6 @@
-16:33:57 **** Incremental Build of configuration Default for project ca9_1 ****
+01:13:31 **** Incremental Build of configuration Default for project ca9_1 ****
 make all 
-cmd.exe /C copy ..\sample1\hrmp.elf .
-        1 個のファイルをコピーしました。
+make: *** No rule to make target '..\sample1\hrmp.elf', needed by 'all'.  Stop.
 
-16:34:02 Build Finished (took 5s.190ms)
+01:13:32 Build Finished (took 121ms)
 

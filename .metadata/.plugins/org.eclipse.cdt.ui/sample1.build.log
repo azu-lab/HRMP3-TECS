@@ -1,11 +1,9 @@
-16:33:56 **** Incremental Build of configuration Default for project sample1 ****
+01:13:31 **** Incremental Build of configuration Default for project sample1 ****
 make all 
-ruby ../../../../cfg/cfg.rb --pass 1 --kernel hrmp -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc --api-table ../../../../kernel/kernel_api.def --symval-table ../../../../kernel/kernel_sym.def  --symval-table ../../../../arch/arm_gcc/common/core_sym.def \
-					-M objs/cfg1_out_c.d ../../../../target/zybo_z7_gcc/target_kernel.cfg ../../../../sample/sample1.cfg
-process_begin: CreateProcess(NULL, ruby ../../../../cfg/cfg.rb --pass 1 --kernel hrmp -I. -I../../../../include -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc --api-table ../../../../kernel/kernel_api.def --symval-table ../../../../kernel/kernel_sym.def --symval-table ../../../../arch/arm_gcc/common/core_sym.def -M objs/cfg1_out_c.d ../../../../target/zybo_z7_gcc/target_kernel.cfg ../../../../sample/sample1.cfg, ...) failed.
-make (e=2): 指定されたファイルが見つかりません。
+arm-none-eabi-gcc -c -o objs/start.o -MD -MP -MF objs/start.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc -DALLFUNC  -I../../../../kernel ../../../../arch/arm_gcc/common/start.S
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [../../../../arch/arm_gcc/common/Makefile.core:70: objs/start.o] Error 1
 
-make: *** [Makefile:434: cfg1_out.timestamp] Error 2
-
-16:33:57 Build Finished (took 516ms)
+01:13:31 Build Finished (took 114ms)
 

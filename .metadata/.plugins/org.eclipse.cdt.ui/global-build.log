@@ -2720,3 +2720,591 @@ make: *** [Makefile:434: cfg1_out.timestamp] Error 2
 make all 
 cmd.exe /C copy ..\sample1\hrmp.elf .
         1 個のファイルをコピーしました。
+21:14:59 **** Build of project ca9_0_bsp ****
+make -k all 
+'Finished building libraries'
+21:15:02 **** Build of project ca9_1_bsp ****
+make -k all 
+'Finished building libraries'
+21:16:57 **** Build of configuration Default for project sample1 ****
+make all 
+arm-none-eabi-gcc -c -o objs/start.o -MD -MP -MF objs/start.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc -DALLFUNC  -I../../../../kernel ../../../../arch/arm_gcc/common/start.S
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [../../../../arch/arm_gcc/common/Makefile.core:70: objs/start.o] Error 1
+21:16:58 **** Build of configuration Default for project ca9_1 ****
+make all 
+make: *** No rule to make target '..\sample1\hrmp.elf', needed by 'all'.  Stop.
+21:16:58 **** Build of configuration Default for project test_sample ****
+make all 
+make: Nothing to be done for 'all'.
+21:17:28 **** Incremental Build of configuration Default for project sample1 ****
+make all 
+arm-none-eabi-gcc -c -o objs/start.o -MD -MP -MF objs/start.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc -DALLFUNC  -I../../../../kernel ../../../../arch/arm_gcc/common/start.S
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [../../../../arch/arm_gcc/common/Makefile.core:70: objs/start.o] Error 1
+21:17:28 **** Incremental Build of configuration Default for project ca9_1 ****
+make all 
+make: *** No rule to make target '..\sample1\hrmp.elf', needed by 'all'.  Stop.
+21:17:29 **** Incremental Build of configuration Default for project test_sample ****
+make all 
+make: Nothing to be done for 'all'.
+21:19:06 **** Incremental Build of configuration Default for project sample1 ****
+make all 
+arm-none-eabi-gcc -c -o objs/start.o -MD -MP -MF objs/start.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc -DALLFUNC  -I../../../../kernel ../../../../arch/arm_gcc/common/start.S
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [../../../../arch/arm_gcc/common/Makefile.core:70: objs/start.o] Error 1
+21:19:06 **** Incremental Build of configuration Default for project ca9_1 ****
+make all 
+make: *** No rule to make target '..\sample1\hrmp.elf', needed by 'all'.  Stop.
+21:19:06 **** Incremental Build of configuration Default for project test_sample ****
+make all 
+make: Nothing to be done for 'all'.
+21:20:43 **** Incremental Build of configuration Default for project sample1 ****
+make all 
+arm-none-eabi-gcc -c -o objs/start.o -MD -MP -MF objs/start.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc -DALLFUNC  -I../../../../kernel ../../../../arch/arm_gcc/common/start.S
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [../../../../arch/arm_gcc/common/Makefile.core:70: objs/start.o] Error 1
+21:20:43 **** Incremental Build of configuration Default for project ca9_1 ****
+make all 
+make: *** No rule to make target '..\sample1\hrmp.elf', needed by 'all'.  Stop.
+21:20:43 **** Incremental Build of configuration Default for project test_sample ****
+make all 
+make: Nothing to be done for 'all'.
+21:22:59 **** Incremental Build of configuration Default for project sample1 ****
+make all 
+arm-none-eabi-gcc -c -o objs/start.o -MD -MP -MF objs/start.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc -DALLFUNC  -I../../../../kernel ../../../../arch/arm_gcc/common/start.S
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [../../../../arch/arm_gcc/common/Makefile.core:70: objs/start.o] Error 1
+21:22:59 **** Incremental Build of configuration Default for project ca9_1 ****
+make all 
+make: *** No rule to make target '..\sample1\hrmp.elf', needed by 'all'.  Stop.
+21:22:59 **** Incremental Build of configuration Default for project test_sample ****
+make all 
+make: Nothing to be done for 'all'.
+21:26:44 **** Incremental Build of configuration Default for project sample1 ****
+make all 
+arm-none-eabi-gcc -c -o objs/start.o -MD -MP -MF objs/start.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc -DALLFUNC  -I../../../../kernel ../../../../arch/arm_gcc/common/start.S
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [../../../../arch/arm_gcc/common/Makefile.core:70: objs/start.o] Error 1
+21:26:44 **** Incremental Build of configuration Default for project ca9_1 ****
+make all 
+make: *** No rule to make target '..\sample1\hrmp.elf', needed by 'all'.  Stop.
+21:26:45 **** Incremental Build of configuration Default for project test_sample ****
+make all 
+make: Nothing to be done for 'all'.
+21:30:16 **** Incremental Build of configuration Default for project sample1 ****
+make all 
+arm-none-eabi-gcc -c -o objs/start.o -MD -MP -MF objs/start.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc -DALLFUNC  -I../../../../kernel ../../../../arch/arm_gcc/common/start.S
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [../../../../arch/arm_gcc/common/Makefile.core:70: objs/start.o] Error 1
+21:30:16 **** Incremental Build of configuration Default for project ca9_1 ****
+make all 
+make: *** No rule to make target '..\sample1\hrmp.elf', needed by 'all'.  Stop.
+21:30:16 **** Incremental Build of configuration Default for project test_sample ****
+make all 
+make: Nothing to be done for 'all'.
+21:31:53 **** Incremental Build of configuration Default for project sample1 ****
+make all 
+arm-none-eabi-gcc -c -o objs/start.o -MD -MP -MF objs/start.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc -DALLFUNC  -I../../../../kernel ../../../../arch/arm_gcc/common/start.S
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [../../../../arch/arm_gcc/common/Makefile.core:70: objs/start.o] Error 1
+21:31:53 **** Incremental Build of configuration Default for project ca9_1 ****
+make all 
+make: *** No rule to make target '..\sample1\hrmp.elf', needed by 'all'.  Stop.
+21:31:53 **** Incremental Build of configuration Default for project test_sample ****
+make all 
+make: Nothing to be done for 'all'.
+21:35:16 **** Incremental Build of configuration Default for project sample1 ****
+make all 
+arm-none-eabi-gcc -c -o objs/start.o -MD -MP -MF objs/start.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc -DALLFUNC  -I../../../../kernel ../../../../arch/arm_gcc/common/start.S
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [../../../../arch/arm_gcc/common/Makefile.core:70: objs/start.o] Error 1
+21:35:16 **** Incremental Build of configuration Default for project ca9_1 ****
+make all 
+make: *** No rule to make target '..\sample1\hrmp.elf', needed by 'all'.  Stop.
+21:35:16 **** Incremental Build of configuration Default for project test_sample ****
+make all 
+make: Nothing to be done for 'all'.
+21:36:51 **** Incremental Build of configuration Default for project sample1 ****
+make all 
+arm-none-eabi-gcc -c -o objs/start.o -MD -MP -MF objs/start.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc -DALLFUNC  -I../../../../kernel ../../../../arch/arm_gcc/common/start.S
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [../../../../arch/arm_gcc/common/Makefile.core:70: objs/start.o] Error 1
+21:36:51 **** Incremental Build of configuration Default for project ca9_1 ****
+make all 
+make: *** No rule to make target '..\sample1\hrmp.elf', needed by 'all'.  Stop.
+21:36:51 **** Incremental Build of configuration Default for project test_sample ****
+make all 
+arm-none-eabi-gcc -c -o objs/test_sample.o -MD -MP -MF objs/test_sample.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../evaluation_sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc  ../../../../evaluation_sample/test_sample.c
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [Makefile:716: objs/test_sample.o] Error 1
+21:38:58 **** Incremental Build of configuration Default for project sample1 ****
+make all 
+arm-none-eabi-gcc -c -o objs/start.o -MD -MP -MF objs/start.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc -DALLFUNC  -I../../../../kernel ../../../../arch/arm_gcc/common/start.S
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [../../../../arch/arm_gcc/common/Makefile.core:70: objs/start.o] Error 1
+21:38:58 **** Incremental Build of configuration Default for project ca9_1 ****
+make all 
+make: *** No rule to make target '..\sample1\hrmp.elf', needed by 'all'.  Stop.
+21:38:58 **** Incremental Build of configuration Default for project test_sample ****
+make all 
+arm-none-eabi-gcc -c -o objs/test_sample.o -MD -MP -MF objs/test_sample.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../evaluation_sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc  ../../../../evaluation_sample/test_sample.c
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [Makefile:716: objs/test_sample.o] Error 1
+21:41:34 **** Incremental Build of configuration Default for project sample1 ****
+make all 
+arm-none-eabi-gcc -c -o objs/start.o -MD -MP -MF objs/start.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc -DALLFUNC  -I../../../../kernel ../../../../arch/arm_gcc/common/start.S
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [../../../../arch/arm_gcc/common/Makefile.core:70: objs/start.o] Error 1
+21:41:34 **** Incremental Build of configuration Default for project ca9_1 ****
+make all 
+make: *** No rule to make target '..\sample1\hrmp.elf', needed by 'all'.  Stop.
+21:41:35 **** Incremental Build of configuration Default for project test_sample ****
+make all 
+make: Nothing to be done for 'all'.
+21:52:35 **** Incremental Build of configuration Default for project sample1 ****
+make all 
+arm-none-eabi-gcc -c -o objs/start.o -MD -MP -MF objs/start.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc -DALLFUNC  -I../../../../kernel ../../../../arch/arm_gcc/common/start.S
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [../../../../arch/arm_gcc/common/Makefile.core:70: objs/start.o] Error 1
+21:52:35 **** Incremental Build of configuration Default for project ca9_1 ****
+make all 
+make: *** No rule to make target '..\sample1\hrmp.elf', needed by 'all'.  Stop.
+21:52:36 **** Incremental Build of configuration Default for project test_sample ****
+make all 
+make: Nothing to be done for 'all'.
+22:35:48 **** Incremental Build of configuration Default for project sample1 ****
+make all 
+arm-none-eabi-gcc -c -o objs/start.o -MD -MP -MF objs/start.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc -DALLFUNC  -I../../../../kernel ../../../../arch/arm_gcc/common/start.S
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [../../../../arch/arm_gcc/common/Makefile.core:70: objs/start.o] Error 1
+22:35:48 **** Incremental Build of configuration Default for project ca9_1 ****
+make all 
+make: *** No rule to make target '..\sample1\hrmp.elf', needed by 'all'.  Stop.
+22:35:49 **** Incremental Build of configuration Default for project test_sample ****
+make all 
+make: Nothing to be done for 'all'.
+22:36:58 **** Incremental Build of configuration Default for project sample1 ****
+make all 
+arm-none-eabi-gcc -c -o objs/start.o -MD -MP -MF objs/start.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc -DALLFUNC  -I../../../../kernel ../../../../arch/arm_gcc/common/start.S
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [../../../../arch/arm_gcc/common/Makefile.core:70: objs/start.o] Error 1
+22:36:58 **** Incremental Build of configuration Default for project ca9_1 ****
+make all 
+make: *** No rule to make target '..\sample1\hrmp.elf', needed by 'all'.  Stop.
+22:36:58 **** Incremental Build of configuration Default for project test_sample ****
+make all 
+make: Nothing to be done for 'all'.
+22:38:34 **** Incremental Build of configuration Default for project sample1 ****
+make all 
+arm-none-eabi-gcc -c -o objs/start.o -MD -MP -MF objs/start.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc -DALLFUNC  -I../../../../kernel ../../../../arch/arm_gcc/common/start.S
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [../../../../arch/arm_gcc/common/Makefile.core:70: objs/start.o] Error 1
+22:38:34 **** Incremental Build of configuration Default for project ca9_1 ****
+make all 
+make: *** No rule to make target '..\sample1\hrmp.elf', needed by 'all'.  Stop.
+22:38:35 **** Incremental Build of configuration Default for project test_sample ****
+make all 
+make: Nothing to be done for 'all'.
+22:45:01 **** Incremental Build of configuration Default for project sample1 ****
+make all 
+arm-none-eabi-gcc -c -o objs/start.o -MD -MP -MF objs/start.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc -DALLFUNC  -I../../../../kernel ../../../../arch/arm_gcc/common/start.S
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [../../../../arch/arm_gcc/common/Makefile.core:70: objs/start.o] Error 1
+22:45:01 **** Incremental Build of configuration Default for project ca9_1 ****
+make all 
+make: *** No rule to make target '..\sample1\hrmp.elf', needed by 'all'.  Stop.
+22:45:01 **** Incremental Build of configuration Default for project test_sample ****
+make all 
+make: Nothing to be done for 'all'.
+22:57:57 **** Incremental Build of configuration Default for project sample1 ****
+make all 
+arm-none-eabi-gcc -c -o objs/start.o -MD -MP -MF objs/start.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc -DALLFUNC  -I../../../../kernel ../../../../arch/arm_gcc/common/start.S
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [../../../../arch/arm_gcc/common/Makefile.core:70: objs/start.o] Error 1
+22:57:58 **** Incremental Build of configuration Default for project ca9_1 ****
+make all 
+make: *** No rule to make target '..\sample1\hrmp.elf', needed by 'all'.  Stop.
+22:57:58 **** Incremental Build of configuration Default for project test_sample ****
+make all 
+make: Nothing to be done for 'all'.
+23:03:54 **** Incremental Build of configuration Default for project sample1 ****
+make all 
+arm-none-eabi-gcc -c -o objs/start.o -MD -MP -MF objs/start.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc -DALLFUNC  -I../../../../kernel ../../../../arch/arm_gcc/common/start.S
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [../../../../arch/arm_gcc/common/Makefile.core:70: objs/start.o] Error 1
+23:03:55 **** Incremental Build of configuration Default for project ca9_1 ****
+make all 
+make: *** No rule to make target '..\sample1\hrmp.elf', needed by 'all'.  Stop.
+23:03:55 **** Incremental Build of configuration Default for project test_sample ****
+make all 
+make: Nothing to be done for 'all'.
+23:04:54 **** Incremental Build of configuration Default for project sample1 ****
+make all 
+arm-none-eabi-gcc -c -o objs/start.o -MD -MP -MF objs/start.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc -DALLFUNC  -I../../../../kernel ../../../../arch/arm_gcc/common/start.S
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [../../../../arch/arm_gcc/common/Makefile.core:70: objs/start.o] Error 1
+23:04:54 **** Incremental Build of configuration Default for project ca9_1 ****
+make all 
+make: *** No rule to make target '..\sample1\hrmp.elf', needed by 'all'.  Stop.
+23:04:54 **** Incremental Build of configuration Default for project test_sample ****
+make all 
+make: Nothing to be done for 'all'.
+23:06:09 **** Incremental Build of configuration Default for project sample1 ****
+make all 
+arm-none-eabi-gcc -c -o objs/start.o -MD -MP -MF objs/start.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc -DALLFUNC  -I../../../../kernel ../../../../arch/arm_gcc/common/start.S
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [../../../../arch/arm_gcc/common/Makefile.core:70: objs/start.o] Error 1
+23:06:09 **** Incremental Build of configuration Default for project ca9_1 ****
+make all 
+make: *** No rule to make target '..\sample1\hrmp.elf', needed by 'all'.  Stop.
+23:06:09 **** Incremental Build of configuration Default for project test_sample ****
+make all 
+make: Nothing to be done for 'all'.
+23:08:21 **** Incremental Build of configuration Default for project sample1 ****
+make all 
+arm-none-eabi-gcc -c -o objs/start.o -MD -MP -MF objs/start.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc -DALLFUNC  -I../../../../kernel ../../../../arch/arm_gcc/common/start.S
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [../../../../arch/arm_gcc/common/Makefile.core:70: objs/start.o] Error 1
+23:08:21 **** Incremental Build of configuration Default for project ca9_1 ****
+make all 
+make: *** No rule to make target '..\sample1\hrmp.elf', needed by 'all'.  Stop.
+23:08:22 **** Incremental Build of configuration Default for project test_sample ****
+make all 
+make: Nothing to be done for 'all'.
+23:36:31 **** Build of configuration Default for project tTestSample ****
+make all 
+make[1]: Entering directory 'D:/hrmp3_3.3+tecs/target/zybo_z7_gcc/xilinx_sdk/tTestSample'
+make[1]: 'kernel_cfg.h' is up to date.
+make[1]: 'offset.h' is up to date.
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory 'D:/hrmp3_3.3+tecs/target/zybo_z7_gcc/xilinx_sdk/tTestSample'
+23:36:33 **** Incremental Build of configuration Default for project sample1 ****
+make all 
+arm-none-eabi-gcc -c -o objs/start.o -MD -MP -MF objs/start.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc -DALLFUNC  -I../../../../kernel ../../../../arch/arm_gcc/common/start.S
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [../../../../arch/arm_gcc/common/Makefile.core:70: objs/start.o] Error 1
+23:36:33 **** Incremental Build of configuration Default for project ca9_1 ****
+make all 
+make: *** No rule to make target '..\sample1\hrmp.elf', needed by 'all'.  Stop.
+23:43:39 **** Incremental Build of configuration Default for project tTestSample ****
+make all 
+make[1]: Entering directory 'D:/hrmp3_3.3+tecs/target/zybo_z7_gcc/xilinx_sdk/tTestSample'
+make[1]: 'kernel_cfg.h' is up to date.
+make[1]: 'offset.h' is up to date.
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory 'D:/hrmp3_3.3+tecs/target/zybo_z7_gcc/xilinx_sdk/tTestSample'
+23:43:40 **** Incremental Build of configuration Default for project sample1 ****
+make all 
+arm-none-eabi-gcc -c -o objs/start.o -MD -MP -MF objs/start.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc -DALLFUNC  -I../../../../kernel ../../../../arch/arm_gcc/common/start.S
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [../../../../arch/arm_gcc/common/Makefile.core:70: objs/start.o] Error 1
+23:43:40 **** Incremental Build of configuration Default for project ca9_1 ****
+make all 
+make: *** No rule to make target '..\sample1\hrmp.elf', needed by 'all'.  Stop.
+23:47:30 **** Incremental Build of configuration Default for project tTestSample ****
+make all 
+make[1]: Entering directory 'D:/hrmp3_3.3+tecs/target/zybo_z7_gcc/xilinx_sdk/tTestSample'
+make[1]: 'kernel_cfg.h' is up to date.
+make[1]: 'offset.h' is up to date.
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory 'D:/hrmp3_3.3+tecs/target/zybo_z7_gcc/xilinx_sdk/tTestSample'
+23:47:31 **** Incremental Build of configuration Default for project sample1 ****
+make all 
+arm-none-eabi-gcc -c -o objs/start.o -MD -MP -MF objs/start.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc -DALLFUNC  -I../../../../kernel ../../../../arch/arm_gcc/common/start.S
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [../../../../arch/arm_gcc/common/Makefile.core:70: objs/start.o] Error 1
+23:47:31 **** Incremental Build of configuration Default for project ca9_1 ****
+make all 
+make: *** No rule to make target '..\sample1\hrmp.elf', needed by 'all'.  Stop.
+23:50:26 **** Incremental Build of configuration Default for project tTestSample ****
+make all 
+make[1]: Entering directory 'D:/hrmp3_3.3+tecs/target/zybo_z7_gcc/xilinx_sdk/tTestSample'
+make[1]: 'kernel_cfg.h' is up to date.
+make[1]: 'offset.h' is up to date.
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory 'D:/hrmp3_3.3+tecs/target/zybo_z7_gcc/xilinx_sdk/tTestSample'
+23:50:28 **** Incremental Build of configuration Default for project sample1 ****
+make all 
+arm-none-eabi-gcc -c -o objs/start.o -MD -MP -MF objs/start.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc -DALLFUNC  -I../../../../kernel ../../../../arch/arm_gcc/common/start.S
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [../../../../arch/arm_gcc/common/Makefile.core:70: objs/start.o] Error 1
+23:50:28 **** Incremental Build of configuration Default for project ca9_1 ****
+make all 
+make: *** No rule to make target '..\sample1\hrmp.elf', needed by 'all'.  Stop.
+23:51:15 **** Incremental Build of configuration Default for project tTestSample ****
+make all 
+make[1]: Entering directory 'D:/hrmp3_3.3+tecs/target/zybo_z7_gcc/xilinx_sdk/tTestSample'
+make[1]: 'kernel_cfg.h' is up to date.
+make[1]: 'offset.h' is up to date.
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory 'D:/hrmp3_3.3+tecs/target/zybo_z7_gcc/xilinx_sdk/tTestSample'
+23:51:16 **** Incremental Build of configuration Default for project sample1 ****
+make all 
+arm-none-eabi-gcc -c -o objs/start.o -MD -MP -MF objs/start.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc -DALLFUNC  -I../../../../kernel ../../../../arch/arm_gcc/common/start.S
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [../../../../arch/arm_gcc/common/Makefile.core:70: objs/start.o] Error 1
+23:51:16 **** Incremental Build of configuration Default for project ca9_1 ****
+make all 
+make: *** No rule to make target '..\sample1\hrmp.elf', needed by 'all'.  Stop.
+23:54:11 **** Incremental Build of configuration Default for project tTestSample ****
+make all 
+make[1]: Entering directory 'D:/hrmp3_3.3+tecs/target/zybo_z7_gcc/xilinx_sdk/tTestSample'
+make[1]: 'kernel_cfg.h' is up to date.
+make[1]: 'offset.h' is up to date.
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory 'D:/hrmp3_3.3+tecs/target/zybo_z7_gcc/xilinx_sdk/tTestSample'
+23:54:13 **** Incremental Build of configuration Default for project sample1 ****
+make all 
+arm-none-eabi-gcc -c -o objs/start.o -MD -MP -MF objs/start.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc -DALLFUNC  -I../../../../kernel ../../../../arch/arm_gcc/common/start.S
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [../../../../arch/arm_gcc/common/Makefile.core:70: objs/start.o] Error 1
+23:54:13 **** Incremental Build of configuration Default for project ca9_1 ****
+make all 
+make: *** No rule to make target '..\sample1\hrmp.elf', needed by 'all'.  Stop.
+23:56:45 **** Incremental Build of configuration Default for project tTestSample ****
+make all 
+make[1]: Entering directory 'D:/hrmp3_3.3+tecs/target/zybo_z7_gcc/xilinx_sdk/tTestSample'
+make[1]: 'kernel_cfg.h' is up to date.
+make[1]: 'offset.h' is up to date.
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory 'D:/hrmp3_3.3+tecs/target/zybo_z7_gcc/xilinx_sdk/tTestSample'
+23:56:46 **** Incremental Build of configuration Default for project sample1 ****
+make all 
+arm-none-eabi-gcc -c -o objs/start.o -MD -MP -MF objs/start.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc -DALLFUNC  -I../../../../kernel ../../../../arch/arm_gcc/common/start.S
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [../../../../arch/arm_gcc/common/Makefile.core:70: objs/start.o] Error 1
+23:56:46 **** Incremental Build of configuration Default for project ca9_1 ****
+make all 
+make: *** No rule to make target '..\sample1\hrmp.elf', needed by 'all'.  Stop.
+00:01:23 **** Incremental Build of configuration Default for project tTestSample ****
+make all 
+make[1]: Entering directory 'D:/hrmp3_3.3+tecs/target/zybo_z7_gcc/xilinx_sdk/tTestSample'
+make[1]: 'kernel_cfg.h' is up to date.
+make[1]: 'offset.h' is up to date.
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory 'D:/hrmp3_3.3+tecs/target/zybo_z7_gcc/xilinx_sdk/tTestSample'
+00:01:24 **** Incremental Build of configuration Default for project sample1 ****
+make all 
+arm-none-eabi-gcc -c -o objs/start.o -MD -MP -MF objs/start.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc -DALLFUNC  -I../../../../kernel ../../../../arch/arm_gcc/common/start.S
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [../../../../arch/arm_gcc/common/Makefile.core:70: objs/start.o] Error 1
+00:01:24 **** Incremental Build of configuration Default for project ca9_1 ****
+make all 
+make: *** No rule to make target '..\sample1\hrmp.elf', needed by 'all'.  Stop.
+00:01:54 **** Incremental Build of configuration Default for project tTestSample ****
+make all 
+make[1]: Entering directory 'D:/hrmp3_3.3+tecs/target/zybo_z7_gcc/xilinx_sdk/tTestSample'
+make[1]: 'kernel_cfg.h' is up to date.
+make[1]: 'offset.h' is up to date.
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory 'D:/hrmp3_3.3+tecs/target/zybo_z7_gcc/xilinx_sdk/tTestSample'
+00:01:56 **** Incremental Build of configuration Default for project sample1 ****
+make all 
+arm-none-eabi-gcc -c -o objs/start.o -MD -MP -MF objs/start.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc -DALLFUNC  -I../../../../kernel ../../../../arch/arm_gcc/common/start.S
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [../../../../arch/arm_gcc/common/Makefile.core:70: objs/start.o] Error 1
+00:01:56 **** Incremental Build of configuration Default for project ca9_1 ****
+make all 
+make: *** No rule to make target '..\sample1\hrmp.elf', needed by 'all'.  Stop.
+00:03:05 **** Incremental Build of configuration Default for project tTestSample ****
+make all 
+make[1]: Entering directory 'D:/hrmp3_3.3+tecs/target/zybo_z7_gcc/xilinx_sdk/tTestSample'
+make[1]: 'kernel_cfg.h' is up to date.
+make[1]: 'offset.h' is up to date.
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory 'D:/hrmp3_3.3+tecs/target/zybo_z7_gcc/xilinx_sdk/tTestSample'
+00:03:07 **** Incremental Build of configuration Default for project sample1 ****
+make all 
+arm-none-eabi-gcc -c -o objs/start.o -MD -MP -MF objs/start.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc -DALLFUNC  -I../../../../kernel ../../../../arch/arm_gcc/common/start.S
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [../../../../arch/arm_gcc/common/Makefile.core:70: objs/start.o] Error 1
+00:03:07 **** Incremental Build of configuration Default for project ca9_1 ****
+make all 
+make: *** No rule to make target '..\sample1\hrmp.elf', needed by 'all'.  Stop.
+00:29:07 **** Incremental Build of configuration Default for project tTestSample ****
+make all 
+make[1]: Entering directory 'D:/hrmp3_3.3+tecs/target/zybo_z7_gcc/xilinx_sdk/tTestSample'
+make[1]: 'kernel_cfg.h' is up to date.
+make[1]: 'offset.h' is up to date.
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory 'D:/hrmp3_3.3+tecs/target/zybo_z7_gcc/xilinx_sdk/tTestSample'
+00:29:08 **** Incremental Build of configuration Default for project sample1 ****
+make all 
+arm-none-eabi-gcc -c -o objs/start.o -MD -MP -MF objs/start.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc -DALLFUNC  -I../../../../kernel ../../../../arch/arm_gcc/common/start.S
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [../../../../arch/arm_gcc/common/Makefile.core:70: objs/start.o] Error 1
+00:29:08 **** Incremental Build of configuration Default for project ca9_1 ****
+make all 
+make: *** No rule to make target '..\sample1\hrmp.elf', needed by 'all'.  Stop.
+00:58:32 **** Incremental Build of configuration Default for project tTestSample ****
+make all 
+make[1]: Entering directory 'D:/hrmp3_3.3+tecs/target/zybo_z7_gcc/xilinx_sdk/tTestSample'
+make[1]: 'kernel_cfg.h' is up to date.
+make[1]: 'offset.h' is up to date.
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory 'D:/hrmp3_3.3+tecs/target/zybo_z7_gcc/xilinx_sdk/tTestSample'
+00:58:33 **** Incremental Build of configuration Default for project sample1 ****
+make all 
+arm-none-eabi-gcc -c -o objs/start.o -MD -MP -MF objs/start.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc -DALLFUNC  -I../../../../kernel ../../../../arch/arm_gcc/common/start.S
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [../../../../arch/arm_gcc/common/Makefile.core:70: objs/start.o] Error 1
+00:58:34 **** Incremental Build of configuration Default for project ca9_1 ****
+make all 
+make: *** No rule to make target '..\sample1\hrmp.elf', needed by 'all'.  Stop.
+01:04:17 **** Incremental Build of configuration Default for project sample1 ****
+make all 
+arm-none-eabi-gcc -c -o objs/start.o -MD -MP -MF objs/start.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc -DALLFUNC  -I../../../../kernel ../../../../arch/arm_gcc/common/start.S
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [../../../../arch/arm_gcc/common/Makefile.core:70: objs/start.o] Error 1
+01:04:17 **** Incremental Build of configuration Default for project ca9_1 ****
+make all 
+make: *** No rule to make target '..\sample1\hrmp.elf', needed by 'all'.  Stop.
+01:04:18 **** Incremental Build of configuration Default for project test_sample ****
+make all 
+make: Nothing to be done for 'all'.
+01:08:02 **** Incremental Build of configuration Default for project sample1 ****
+make all 
+arm-none-eabi-gcc -c -o objs/start.o -MD -MP -MF objs/start.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc -DALLFUNC  -I../../../../kernel ../../../../arch/arm_gcc/common/start.S
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [../../../../arch/arm_gcc/common/Makefile.core:70: objs/start.o] Error 1
+01:08:02 **** Incremental Build of configuration Default for project ca9_1 ****
+make all 
+make: *** No rule to make target '..\sample1\hrmp.elf', needed by 'all'.  Stop.
+01:08:05 **** Incremental Build of configuration Default for project test_sample ****
+make all 
+make: Nothing to be done for 'all'.
+01:09:09 **** Incremental Build of configuration Default for project sample1 ****
+make all 
+arm-none-eabi-gcc -c -o objs/start.o -MD -MP -MF objs/start.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc -DALLFUNC  -I../../../../kernel ../../../../arch/arm_gcc/common/start.S
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [../../../../arch/arm_gcc/common/Makefile.core:70: objs/start.o] Error 1
+01:09:10 **** Incremental Build of configuration Default for project ca9_1 ****
+make all 
+make: *** No rule to make target '..\sample1\hrmp.elf', needed by 'all'.  Stop.
+01:09:10 **** Incremental Build of configuration Default for project test_sample ****
+make all 
+make: Nothing to be done for 'all'.
+01:09:47 **** Incremental Build of configuration Default for project sample1 ****
+make all 
+arm-none-eabi-gcc -c -o objs/start.o -MD -MP -MF objs/start.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc -DALLFUNC  -I../../../../kernel ../../../../arch/arm_gcc/common/start.S
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [../../../../arch/arm_gcc/common/Makefile.core:70: objs/start.o] Error 1
+01:09:47 **** Incremental Build of configuration Default for project ca9_1 ****
+make all 
+make: *** No rule to make target '..\sample1\hrmp.elf', needed by 'all'.  Stop.
+01:09:48 **** Incremental Build of configuration Default for project test_sample ****
+make all 
+make: Nothing to be done for 'all'.
+01:10:20 **** Incremental Build of configuration Default for project sample1 ****
+make all 
+arm-none-eabi-gcc -c -o objs/start.o -MD -MP -MF objs/start.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc -DALLFUNC  -I../../../../kernel ../../../../arch/arm_gcc/common/start.S
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [../../../../arch/arm_gcc/common/Makefile.core:70: objs/start.o] Error 1
+01:10:20 **** Incremental Build of configuration Default for project ca9_1 ****
+make all 
+make: *** No rule to make target '..\sample1\hrmp.elf', needed by 'all'.  Stop.
+01:10:20 **** Incremental Build of configuration Default for project test_sample ****
+make all 
+make: Nothing to be done for 'all'.
+01:11:06 **** Incremental Build of configuration Default for project sample1 ****
+make all 
+arm-none-eabi-gcc -c -o objs/start.o -MD -MP -MF objs/start.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc -DALLFUNC  -I../../../../kernel ../../../../arch/arm_gcc/common/start.S
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [../../../../arch/arm_gcc/common/Makefile.core:70: objs/start.o] Error 1
+01:11:06 **** Incremental Build of configuration Default for project ca9_1 ****
+make all 
+make: *** No rule to make target '..\sample1\hrmp.elf', needed by 'all'.  Stop.
+01:11:07 **** Incremental Build of configuration Default for project test_sample ****
+make all 
+make: Nothing to be done for 'all'.
+01:11:42 **** Incremental Build of configuration Default for project sample1 ****
+make all 
+arm-none-eabi-gcc -c -o objs/start.o -MD -MP -MF objs/start.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc -DALLFUNC  -I../../../../kernel ../../../../arch/arm_gcc/common/start.S
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [../../../../arch/arm_gcc/common/Makefile.core:70: objs/start.o] Error 1
+01:11:42 **** Incremental Build of configuration Default for project ca9_1 ****
+make all 
+make: *** No rule to make target '..\sample1\hrmp.elf', needed by 'all'.  Stop.
+01:11:43 **** Incremental Build of configuration Default for project test_sample ****
+make all 
+make: Nothing to be done for 'all'.
+01:12:19 **** Incremental Build of configuration Default for project sample1 ****
+make all 
+arm-none-eabi-gcc -c -o objs/start.o -MD -MP -MF objs/start.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc -DALLFUNC  -I../../../../kernel ../../../../arch/arm_gcc/common/start.S
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [../../../../arch/arm_gcc/common/Makefile.core:70: objs/start.o] Error 1
+01:12:19 **** Incremental Build of configuration Default for project ca9_1 ****
+make all 
+make: *** No rule to make target '..\sample1\hrmp.elf', needed by 'all'.  Stop.
+01:12:20 **** Incremental Build of configuration Default for project test_sample ****
+make all 
+make: Nothing to be done for 'all'.
+01:12:50 **** Incremental Build of configuration Default for project sample1 ****
+make all 
+arm-none-eabi-gcc -c -o objs/start.o -MD -MP -MF objs/start.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc -DALLFUNC  -I../../../../kernel ../../../../arch/arm_gcc/common/start.S
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [../../../../arch/arm_gcc/common/Makefile.core:70: objs/start.o] Error 1
+01:12:50 **** Incremental Build of configuration Default for project ca9_1 ****
+make all 
+make: *** No rule to make target '..\sample1\hrmp.elf', needed by 'all'.  Stop.
+01:12:50 **** Incremental Build of configuration Default for project test_sample ****
+make all 
+make: Nothing to be done for 'all'.
+01:13:31 **** Incremental Build of configuration Default for project sample1 ****
+make all 
+arm-none-eabi-gcc -c -o objs/start.o -MD -MP -MF objs/start.d -DUSE_CFG_PASS3 -O2 -Wall -g   -DUSE_ARM_FPU_ALWAYS -mfpu=vfpv3-d16 -mfloat-abi=hard -mlittle-endian -mcpu=cortex-a9+nofp -DTOPPERS_OMIT_TECS  -DARM_PAGE_TABLE_RATIO=2 -DUSE_BYPASS_IPI_DISPATCH_HANDER -D__TARGET_ARCH_ARM=7  -I. -I../../../../include  -I../../../../target/zybo_z7_gcc -I../../../../arch/arm_gcc/zynq7000 -I../../../../arch/arm_gcc/common -I../../../../arch/gcc -I../../../.. -I../../../../sample -I./gen -I../../../../tecs_kernel -I../../../../tecsgen/tecs -I../../../../tecsgen/tecs/rpc -DALLFUNC  -I../../../../kernel ../../../../arch/arm_gcc/common/start.S
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-a9+nofp'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a12 cortex-a15 cortex-a15.cortex-a7 cortex-a17 cortex-a17.cortex-a7 cortex-a5 cortex-a53 cortex-a57 cortex-a57.cortex-a53 cortex-a7 cortex-a72 cortex-a72.cortex-a53 cortex-a8 cortex-a9 cortex-m0 cortex-m0.small-multiply cortex-m0plus cortex-m0plus.small-multiply cortex-m1 cortex-m1.small-multiply cortex-m3 cortex-m4 cortex-m7 cortex-r4 cortex-r4f cortex-r5 cortex-r7 cortex-r8 ep9312 exynos-m1 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 marvell-pj4 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xgene1 xscale
+make: *** [../../../../arch/arm_gcc/common/Makefile.core:70: objs/start.o] Error 1
+01:13:31 **** Incremental Build of configuration Default for project ca9_1 ****
+make all 
+make: *** No rule to make target '..\sample1\hrmp.elf', needed by 'all'.  Stop.
+01:13:32 **** Incremental Build of configuration Default for project test_sample ****
+make all 
+make: Nothing to be done for 'all'.

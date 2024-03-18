@@ -143,22 +143,69 @@ region rKernelDomain {
 /*
  *      サンプルプログラムのセルタイプの定義
  */
+
+signature sData{
+    void main(void);
+};
+
+signature sMotor{
+    void main(void);
+};
+
+signature sLight{
+    void main(void);
+};
+
+signature sBack{
+    void main(void);
+};
+
 // [singleton]      // HRMP3 版では singleton ではない
 celltype tTestSample {
     require tKernel.eKernel;            /* 呼び口名なし（例：delay）*/
     /*require cKernel = tKernel.eKernel;/* 呼び口名あり（例：cKernel_delay）*/
     require ciKernel = tKernel.eiKernel;/* 呼び口名あり（例：ciKernel_）*/
 
-    call sTask          cTask[2];   /* タスク操作 */
+    call sData          cDataBody[2];
 
     call sSerialPort    cSerialPort;    /* シリアルドライバとの接続 */
     call sSysLog        cSysLog;        /* システムログ機能との接続 */
     
     entry sTaskBody     eMainTask;      /* Mainタスク */
-    entry sTaskBody     eMotor1;    /* モータを模したタスク(PRC1) */
-    entry sTaskBody     eMotor2;    /* モータを模したタスク(PRC2) */
-    // entry sTaskBody     eDataAcqu1;    /* リアルタイム通信を模したタスク(PRC1) */
-    // entry sTaskBody     eDataAcqu2;    /* リアルタイム通信を模したタスク(PRC2) */
+    // entry sBack         eMotorBody;
+    // entry sBack         eLightBody;
+};
+
+celltype tDataBody1{
+    call    sMotor  cMotorBody;
+    call    sTask   cTask;
+
+    entry   sData   eDataBody;
+    entry   sTaskBody   eDataTask; 
+};
+
+celltype tDataBody2{
+    call    sLight  cLightBody;
+    call    sTask   cTask;
+
+    entry   sData   eDataBody;
+    entry   sTaskBody   eDataTask; 
+};
+
+celltype tMotorBody{
+    call    sTask   cTask;
+    // call    sBack   cSample;
+
+    entry   sMotor  eMotorBody;
+    entry   sTaskBody     eMotorTask;
+};
+
+celltype tLightBody{
+    call    sTask   cTask;
+    // call    sBack   cSample;
+
+    entry   sLight  eLightBody;
+    entry   sTaskBody     eLightTask;
 };
 
 /*
@@ -168,9 +215,14 @@ celltype tTestSample {
 region rUserDomain1{
     [class(HRMP,"CLS_PRC1")]
     region rProcessor1Only{
+        cell tDataBody1 DataBody1 {
+            /* 呼び口の結合 */
+            cTask = DataAcqu1.eTask;
+            cMotorBody = rProcessor2Only::MotorBody.eMotorBody;
+        };
         cell tTask DataAcqu1 {
             /* 呼び口の結合 */
-            cTaskBody = rUserDomain1::rProcessor2Only::Motor1.eTask;
+            cTaskBody = DataBody1.eDataTask;
             /* 属性の設定 */
             priority = C_EXP("MID_PRIORITY");
             stackSize = C_EXP("STACK_SIZE");
@@ -178,9 +230,13 @@ region rUserDomain1{
     };
     [class(HRMP,"CLS_PRC2")]
     region rProcessor2Only{
-        cell tTask Motor1 {
+        cell tMotorBody MotorBody{
+            cTask = Motor.eTask;
+            // cSample = rKernelDomain::rProcessor1Migratable::TestSample.eMotorBody;
+        };
+        cell tTask Motor {
             /* 呼び口の結合 */
-            cTaskBody = rKernelDomain::rProcessor1Migratable::TestSample.eMotor1;
+            cTaskBody = MotorBody.eMotorTask;
             /* 属性の設定 */
             priority = C_EXP("MID_PRIORITY");
             stackSize = C_EXP("STACK_SIZE");
@@ -192,9 +248,14 @@ region rUserDomain1{
 region rUserDomain2{
     [class(HRMP,"CLS_PRC1")]
     region rProcessor1Only{
+        cell tDataBody2 DataBody2 {
+            /* 呼び口の結合 */
+            cTask = DataAcqu2.eTask;
+            cLightBody = rProcessor2Only::LightBody.eLightBody;
+        };
         cell tTask DataAcqu2 {
             /* 呼び口の結合 */
-            cTaskBody = rUserDomain2::rProcessor2Only::Motor2.eTask;
+            cTaskBody = DataBody2.eDataTask;
             /* 属性の設定 */
             priority = C_EXP("MID_PRIORITY");
             stackSize = C_EXP("STACK_SIZE");
@@ -202,9 +263,13 @@ region rUserDomain2{
     };
     [class(HRMP,"CLS_PRC2")]
     region rProcessor2Only{
-        cell tTask Motor2 {
+        cell tLightBody LightBody{
+            cTask = Light.eTask;
+            // cSample = rKernelDomain::rProcessor1Migratable::TestSample.eLightBody;
+        };
+        cell tTask Light {
             /* 呼び口の結合 */
-            cTaskBody = rKernelDomain::rProcessor1Migratable::TestSample.eMotor2;
+            cTaskBody = LightBody.eLightTask;
             /* 属性の設定 */
             priority = C_EXP("MID_PRIORITY");
             stackSize = C_EXP("STACK_SIZE");
@@ -225,8 +290,8 @@ region rKernelDomain{
     
         cell tTestSample TestSample{
             /* 呼び口の結合 */
-            cTask[0] = rUserDomain1::rProcessor1Only::DataAcqu1.eTask;
-            cTask[1] = rUserDomain2::rProcessor1Only::DataAcqu2.eTask;
+            cDataBody[0] = rUserDomain1::rProcessor1Only::DataBody1.eDataBody;
+            cDataBody[1] = rUserDomain2::rProcessor1Only::DataBody2.eDataBody;
 
             cSerialPort = rProcessor1Migratable::SerialPort1.eSerialPort;
             cSysLog     = rProcessor1Migratable::SysLog.eSysLog;

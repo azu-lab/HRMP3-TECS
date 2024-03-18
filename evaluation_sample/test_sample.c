@@ -33,18 +33,68 @@ void busy_wait_ms(int_t ms){
     }
 }
 
+void motor_main(void) {
+    SVC_PERROR(act_tsk(Motor));
+}
+
 void motor_task(intptr_t exinf) {
     // while (1) {
     //     busy_wait_ms(1); // 1ms待機
     //     syslog(LOG_NOTICE, "Real-time task is running on core 1");
     // }
+    syslog(LOG_NOTICE, "Motor is running!");
+    // busy_wait_ms(4);
+    dly_tsk(4000);
+    ext_tsk();
 }
 
-void data_acqu_task(intptr_t exinf) {
+void light_main(void){
+    SVC_PERROR(act_tsk(Light));
+}
+
+void light_task(intptr_t exinf) {
+    // while (1) {
+    //     busy_wait_ms(1); // 1ms待機
+    //     syslog(LOG_NOTICE, "Real-time task is running on core 1");
+    // }
+    syslog(LOG_NOTICE, "Light is running!");
+    // busy_wait_ms(4);
+    dly_tsk(4000);
+    ext_tsk();
+}
+
+void data1_main(void){
+    // syslog(LOG_NOTICE, "Data1 is running!");
+    SVC_PERROR(act_tsk(Data1));
+    motor_main();
+}
+
+void data1_task(intptr_t exinf) {
     // while (1) {
     //     busy_wait_ms(5); // 4ms待機
     //     syslog(LOG_NOTICE, "Non-real-time task is running on core 2");
     // }
+    // syslog(LOG_NOTICE, "DataTask is running!");
+    // busy_wait_ms(4);
+    dly_tsk(4000);
+    ext_tsk();
+}
+
+void data2_main(void){
+    // syslog(LOG_NOTICE, "Data2 is running!");
+    SVC_PERROR(act_tsk(Data2));
+    light_main();
+}
+
+void data2_task(intptr_t exinf) {
+    // while (1) {
+    //     busy_wait_ms(5); // 4ms待機
+    //     syslog(LOG_NOTICE, "Non-real-time task is running on core 2");
+    // }
+    // syslog(LOG_NOTICE, "DataTask is running!");
+    // busy_wait_ms(4);
+    dly_tsk(4000);
+    ext_tsk();
 }
 
 void main_task(intptr_t exinf) {
@@ -57,7 +107,7 @@ void main_task(intptr_t exinf) {
     #endif /* TASK_LOOP */
 
     SVC_PERROR(syslog_msk_log(LOG_UPTO(LOG_INFO), LOG_UPTO(LOG_EMERG)));
-    syslog(LOG_NOTICE, "Sample program starts (exinf = %d).", (int_t) exinf);
+    // syslog(LOG_NOTICE, "Sample program starts (exinf = %d).", (int_t) exinf);
 
 
     get_tim(&start_o);
@@ -90,20 +140,31 @@ void main_task(intptr_t exinf) {
     SVC_PERROR(serial_ctl_por(TASK_PORTID,
                             (IOCTL_CRLF | IOCTL_FCSND | IOCTL_FCRCV)));
     
+    for(int_t i = 0; i < 10; i++){
+        get_tim(&start);
+        data1_main();
+        // busy_wait_ms(4);
+        data2_main();
+        // busy_wait_ms(4);
+        get_tim(&fin);
+        time1 = fin - start - overhead;
+        syslog(LOG_INFO,"%d",time1);
+        // busy_wait_ms(15);
+        dly_tsk(100000);
+    }
+
     // SVC_PERROR(get_tim(&start));
-    SVC_PERROR(act_tsk(Data_Acqu1));
-    
-    SVC_PERROR(act_tsk(Motor1));
-    SVC_PERROR(act_tsk(Data_Acqu2));
-    SVC_PERROR(act_tsk(Motor2));
+
     // SVC_PERROR(get_tim(&fin));
     // time1 = fin - start - overhead;
     // syslog(LOG_INFO,"%d",time1);
 
     
-    while (1) {
-        // 何もしない
-    }
+    // while (1) {
+    //     // 何もしない
+    // }
+
+
 
     syslog(LOG_NOTICE, "Test program ends.");
     SVC_PERROR(ext_ker());

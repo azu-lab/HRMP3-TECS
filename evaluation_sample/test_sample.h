@@ -96,7 +96,9 @@
 
 extern void	busy_wait_ms(int_t ms);
 extern void	motor_task(intptr_t exinf);
-extern void	data_acqu_task(intptr_t exinf);
+extern void	light_task(intptr_t exinf);
+extern void	data1_task(intptr_t exinf);
+extern void	data2_task(intptr_t exinf);
 extern void	main_task(intptr_t exinf);
 
 #endif /* TOPPERS_MACRO_ONLY */
